@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Shellshock BASH Vulnerability tester. Are you vulnerable to #shellshock? (CVE-2014-6271 and CVE-2014-7169)">
     <meta name="keywords" content="Shellshock,BASH,vulnerability,exploit,zeroday,heartbleed,linux,osx,sh,gnu,fix,ubuntu,centos,redhat,shellshocker,CVE-2014-6271,upgrade,4.3,apache,nginx,cgi,mavericks,yosemite,fedora,test,tester,logo,bashbleed,bashbug,vulnerable,hack,aftershock,CVE-2014-7169,check,checker,patcher,patch,stats,statistics,one liner">
-    <meta name="author" content="shellshocker.net">
+    <meta name="author" content="@williamreiske">
     <link rel="icon" href="shellshocker.png">
     <meta property="og:image" content="https://shellshocker.net/shellshocker.png" />
 
@@ -18,7 +18,7 @@
     <!-- Bootstrap theme -->
     <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/theme.min.css" rel="stylesheet">
+    <link href="/theme.min.css?rev=3" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -56,6 +56,8 @@
                         <li><a href="#comment">Comment</a>
                         </li>
                             <li><a href="/sitestats">Stats</a>
+                            </li>
+                            <li><a href="/about">About Us</a>
                             </li>    
                 </ul>
             </div>
@@ -64,16 +66,21 @@
     </div>
 
     <div class="container theme-showcase" role="main">
+    <center>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- shellshocker.net -->
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1808672741905857" data-ad-slot="8928803123" data-ad-format="auto"></ins>
         <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
+        </center>
         <br />
         <!-- Main jumbotron for a primary marketing message or call to action -->
 <p>
-<div class="alert alert-info" style="text-align:center;font-size:20px;" role="alert" id="test_stats">
+<div class="alert alert-info" style="text-align:center;" role="alert">
+      Now taking pull requests @ <a target="_blank" style="color:#fff;" href="https://github.com/wreiske/shellshocker">https://github.com/wreiske/shellshocker</a>
+    </div>
+    <div class="alert alert-info" style="text-align:center;font-size:20px;" role="alert" id="test_stats">
       Loading Stats....
     </div>
         </p>
@@ -85,6 +92,8 @@
             <p>You can use this website to test if your system is vulnerable, and also learn how to patch the vulnerability so you are no longer at risk for attack.</p>
             <p>Join the discussion <a href="#comment">below</a>.</p>
             <a href="https://twitter.com/shellshockernet" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @shellshockernet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>&nbsp;<a href="https://twitter.com/williamreiske" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @williamreiske</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>&nbsp;<a href="https://twitter.com/mieehr" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @mieehr</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
             <a name="websitetest"></a>
         </div>
@@ -119,7 +128,7 @@
                 <button type="button" id="btn_shock" class="btn btn-lg btn-default pull-right">Shock!</button>
             </p>
             <p>
-                <small>Please test responsibly. All tests details are logged. Do not test against websites that you do not have permission to test against. All data is archived in case of abuse. We will be updating this tester to include more features throughout the day, stay tuned!</small>
+                <small>Please test responsibly. All tests details are logged. Do not test against websites that you do not have permission to test against. All data is archived in case of abuse.</small>
             </p>
             <p>Here is an example script that is vulnerable. Place this in your /cgi-bin/shockme.cgi and try hitting it with the shock tester.</p>
             <p>
@@ -128,35 +137,40 @@ echo "Content-type: text/html"
 echo ""
 echo "https://shellshocker.net/"
 </pre></p>
+<p><strong>Last updated Friday September 26th at 4:43PM EST</strong>: <small>This website tester will now wait for a valid response before returning the state of the vulnerability. If the server responds with a 500 we assume you're vulnerable and we display the response immediately without waiting. If we get any other response code we will wait 3 seconds for a reply from your server and display if you're vulnerable or not.</small></p>
         </span>
 
 <a name="systemtest"></a>
         </div>
     </div>
 
-         <center>
-                <img class="img-responsive" src="/shellshocked.jpg" />
-            </center>
-
-
           <div class="panel panel-default">
               <div class="panel-heading">
                 <h3 class="panel-title"><i class="fa fa-terminal"></i> Testing Your System</h3>
             </div>
             <div class="panel-body">
+                     <center>
+                <img class="img-responsive" src="/shellshocked.jpg" />
+            </center>
         <h4>Exploit 1 (CVE-2014-6271)</h4>
         <p>
             There are a few different ways to test if your system is vulnerable to shellshock. Try running the following command in a shell.
         </p>
         <pre>env x='() { :;}; echo vulnerable' bash -c "echo this is a test"</pre>
         <p>
-            If you see "Vulnerable" you need to <a href="#update">update bash</a>. Otherwise, you should be good to go.
+            If you see "vulnerable" you need to <a href="#update">update bash</a>. Otherwise, you should be good to go.
         </p>
         <h4>Exploit 2 (CVE-2014-7169)</h4>
         <p>Even after upgrading bash you may still be vulnerable to this exploit. Try running the following code.</p>
-        <pre>env X='() { (a)=>\' bash -c "echo date"; cat echo</pre>
+        <pre>env X='() { (a)=>\' bash -c "echo date"; cat echo ; rm -f echo</pre>
         <p>If the above command outputs the current date (it may also show errors), you are still vulnerable.</p>
-        <p>If you've tested your sytem, please leave a comment below. Don't forget to include your bash version and what OS you're running. Type
+         <h4>Exploit 3 (???)</h4>
+        <p>
+            Here is another variation of the exploit. <i>Please leave a comment below if you know the CVE of this exploit.</i></p>
+        </p>
+        <pre>env -i X=' () { }; echo hello' bash -c 'date'</pre>
+
+        <p>If you've tested your system, please leave a comment below. Don't forget to include your bash version and what OS you're running. Type
             <code>bash --version</code> for bash, and
             <code>cat /etc/*release*</code> for your OS.</p>
  <a name="fix"></a>
@@ -221,10 +235,6 @@ sudo port upgrade bash
         <p>Once you've updated, try the exploit again and report back your findings.</p>
            <a name="api"></a>
 </div></div>
-
-
-
-
                           <div class="panel panel-default">
               <div class="panel-heading">
                 <h3 class="panel-title"><i class="fa fa-code"></i> API</h3>
@@ -235,11 +245,12 @@ sudo port upgrade bash
         <p>Send a <strong>GET</strong> or <strong>POST</strong> request to:</p>
         <pre>https://shellshocker.net/shock?url=https://example.com</pre>
         <p>You will get a JSON object with a <strong>status</strong> and a <strong>message</strong>. 
-        <p><strong>status</strong> of 0 (Failure) with a failure <strong>message</strong>. <strong>status</strong> of 1 (Vulnerable) with a <strong>message</strong>. <strong>status</strong> of 2 (Maybe) and a <strong>message</strong>.</p>
+        <p><strong>status</strong> of 0 (Failure) with a failure <strong>message</strong>. <strong>status</strong> of 1 (Vulnerable) with a <strong>message</strong>. <strong>status</strong> of 2 (Maybe) and a <strong>message</strong>. <strong>status</strong> of 3 (404 or 403) and the response <strong>message</strong>.</p>
         <h4>Shock Stats API</h4>
          <p>Send a <strong>GET</strong> request to:</p>
           <pre>https://shellshocker.net/stats</pre>
           <p>You will get a JSON object with <strong>total_vulnerable</strong> and <strong>total</strong> tests.
+          <p><strong>Please note: If you use our API, please provide a link back to this page and let your users know that the results are provided by shellshocker.net. If you do not, we will revoke API requests from your utility.</strong></p>
                   <a name="comment"></a>
           </div></div>
                           <div class="panel panel-default">
@@ -291,6 +302,7 @@ sudo port upgrade bash
         <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
+        <p><center><small>Like the site? bitcoin: <a href="bitcoin:16fRZC2r4Nwn6fxMnXfPvNdJLgWpvaiVTG">16fRZC2r4Nwn6fxMnXfPvNdJLgWpvaiVTG</a></small></center></p>
     </div>
     </div>
     <!-- Bootstrap core JavaScript
