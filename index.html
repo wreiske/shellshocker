@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Shellshock BASH Vulnerability tester. Are you vulnerable to #shellshock? (CVE-2014-6271 and CVE-2014-7169)">
+    <meta name="keywords" content="Shellshock,BASH,vulnerability,exploit,zeroday,heartbleed,linux,osx,sh,gnu,fix,ubuntu,centos,redhat,shellshocker,CVE-2014-6271,upgrade,4.3,apache,nginx,cgi,mavericks,yosemite,fedora,test,tester,logo,bashbleed,bashbug,vulnerable,hack,aftershock,CVE-2014-7169,check,checker,patcher,patch,stats,statistics,one liner">
+    <meta name="author" content="shellshocker.net">
+    <link rel="icon" href="shellshocker.png">
+    <meta property="og:image" content="https://shellshocker.net/shellshocker.png" />
+
+    <title>Shellshock BASH Vulnerability Tester</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/theme.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body role="document">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img border="0" height="20px" src="/shellshocker.png" />&nbsp; #Shellshocker</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a>
+                    </li>
+                    <li><a href="#websitetest">Website Tester</a>
+                        <li><a href="#systemtest">System Tester</a>
+                        </li>
+                        <li><a href="#fix">The Fix</a>
+                        </li>
+                        <li><a href="#api">API</a>
+                        </li>
+                        <li><a href="#comment">Comment</a>
+                        </li>
+                            <li><a href="/sitestats">Stats</a>
+                            </li>    
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+
+    <div class="container theme-showcase" role="main">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- shellshocker.net -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1808672741905857" data-ad-slot="8928803123" data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <br />
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+<p>
+<div class="alert alert-info" style="text-align:center;font-size:20px;" role="alert" id="test_stats">
+      Loading Stats....
+    </div>
+        </p>
+        <div class="jumbotron">
+            <h1>What is #shellshock?</h1>
+            <img height="150px" style="float:left;padding-right:20px;" src="/shellshocker.png" />
+            <p>Shellshock (CVE-2014-6271 and CVE-2014-7169) is an vulnerability in GNU's <a target="_BLANK" href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a> shell that gives attackers access to run <a target="_BLANK" href="http://en.wikipedia.org/wiki/Arbitrary_code_execution">remote commands</a> on a vulnerable system. If your system has not updated bash in the last 24 hours, you're
+                <strong>most definitely vulnerable</strong> and have been since first boot. This security vulnerability affects versions 1.14 (released in 1994) to the most recent version 4.3 according to <a target="_BLANK" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">NVD</a>.</p>
+            <p>You can use this website to test if your system is vulnerable, and also learn how to patch the vulnerability so you are no longer at risk for attack.</p>
+            <p>Join the discussion <a href="#comment">below</a>.</p>
+            <a href="https://twitter.com/shellshockernet" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @shellshockernet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            <a name="websitetest"></a>
+        </div>
+
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-bolt"></i> Website Shocker</h3>
+            </div>
+            <div class="panel-body">
+        <span id="loading_tester">
+            <center>
+                <p>
+                    <strong>Loading website tester...</strong>
+                </p>
+                <p><i class="fa fa-spinner fa-spin"></i>
+                </p>
+            </center>
+        </span>
+
+        <span id="shock_tester" style="display:none;">
+            <p>
+                You can test if a system is vulnerable by using the form below. Just provide a http or https url and test away!
+            </p>
+            <span id="test_errors"></span>
+            <p>
+                <div class="input-group">
+                    <span class="input-group-addon">Url</span>
+                    <input type="text" class="form-control" placeholder="https://example.org/cgi-bin/shockme.cgi" id="test_url">
+                </div>
+            </p>
+            <p>
+                <button type="button" id="btn_shock" class="btn btn-lg btn-default pull-right">Shock!</button>
+            </p>
+            <p>
+                <small>Please test responsibly. All tests details are logged. Do not test against websites that you do not have permission to test against. All data is archived in case of abuse. We will be updating this tester to include more features throughout the day, stay tuned!</small>
+            </p>
+            <p>Here is an example script that is vulnerable. Place this in your /cgi-bin/shockme.cgi and try hitting it with the shock tester.</p>
+            <p>
+            <pre>#!/bin/bash
+echo "Content-type: text/html"
+echo ""
+echo "https://shellshocker.net/"
+</pre></p>
+        </span>
+
+<a name="systemtest"></a>
+        </div>
+    </div>
+
+         <center>
+                <img class="img-responsive" src="/shellshocked.jpg" />
+            </center>
+
+
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-terminal"></i> Testing Your System</h3>
+            </div>
+            <div class="panel-body">
+        <h4>Exploit 1 (CVE-2014-6271)</h4>
+        <p>
+            There are a few different ways to test if your system is vulnerable to shellshock. Try running the following command in a shell.
+        </p>
+        <pre>env x='() { :;}; echo vulnerable' bash -c "echo this is a test"</pre>
+        <p>
+            If you see "Vulnerable" you need to <a href="#update">update bash</a>. Otherwise, you should be good to go.
+        </p>
+        <h4>Exploit 2 (CVE-2014-7169)</h4>
+        <p>Even after upgrading bash you may still be vulnerable to this exploit. Try running the following code.</p>
+        <pre>env X='() { (a)=>\' bash -c "echo date"; cat echo</pre>
+        <p>If the above command outputs the current date (it may also show errors), you are still vulnerable.</p>
+        <p>If you've tested your sytem, please leave a comment below. Don't forget to include your bash version and what OS you're running. Type
+            <code>bash --version</code> for bash, and
+            <code>cat /etc/*release*</code> for your OS.</p>
+ <a name="fix"></a>
+            </div></div>
+                  <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-shield"></i> How to fix ShellShock</h3>
+            </div>
+            <div class="panel-body">
+            <div class="alert alert-info" role="alert"><strong>Please Note!</strong> <p>The patch provided may only fix the first exploit on some systems. It's highly recommended that you still update your system and patch bash, even if it only fixes the first exploit on your system. Please check back occasionally for updates, we will keep this page up to date with the latest patches available.</p></div>
+        <h4>CentOS, Ubuntu, Linux systems</h4>
+        <p>
+            Shellshock is a vulnerability in <a target="_BLANK" href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a>. In order to patch your vulnerable system, you will need to get the most up to date version of bash available from <a target="_BLANK" href="http://www.gnu.org/software/bash/">GNU.org</a>.
+        </p>
+        <p>
+            Depending on your package manager (yum, apt-get, etc) you may be able to just run a yum update and you'll be good to go.
+        </p>
+        <p>
+            Here's how that's done:
+        </p>
+        <pre>yum update bash -y</pre>
+        <p>For Ubuntu Systems:</p>
+        <pre>apt-get update; apt-get upgrade;</pre> 
+        <p>For Arch Linux:</p>
+        <pre>pacman -Syu</pre>
+        <p>
+            If your package manager doesn't find an update, you will need to build bash from src.
+        </p>
+        <p>You can patch bash with one command using our bash patcher, just run the following command and you should be good to go!</p>
+        <p>Make sure you have patch installed before you run this command. <code>sudo apt-get install patch (yum install patch) etc...</code>
+
+        <pre>curl https://shellshocker.net/fixbash | sh</pre>
+        <p>If you want to do it yourself, feel free. Here are all the commands you'll need.</p>
+        <pre>cd ~/
+mkdir bash
+cd bash
+wget https://ftp.gnu.org/gnu/bash/bash-4.3.tar.gz
+#download all patches
+for i in $(seq -f "%03g" 0 25); do wget     https://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-$i; done
+tar zxvf bash-4.3.tar.gz 
+cd bash-4.3
+for i in $(seq -f "%03g" 0 25);do patch -p0 < ../bash43-$i; done
+./configure && make && make install
+</pre>
+
+        <h4>OS X</h4>
+        <p>If you're running OS X, you will need to download and compile bash yourself using <a target="_BLANK" href="http://brew.sh/#install">brew</a> or <a target="_BLANK" src="https://www.macports.org/install.php">MacPorts</a>.</p>
+        <p>We recommend using brew - Go to <a target="_BLANK" href="http://brew.sh/#install">http://brew.sh/</a> and install brew on your system.</p>
+        <p>Once you have brew installed, run the following commands to update your system</p>
+        <pre>brew update
+brew install bash
+sudo sh -c 'echo "/usr/local/bin/bash" >> /etc/shells'
+chsh -s /usr/local/bin/bash
+sudo mv /bin/bash /bin/bash-backup
+sudo ln -s /usr/local/bin/bash /bin/bash
+</pre>
+        <p>If you're using
+            <strong>MacPorts</strong>, run the following:</p>
+        <pre>sudo port self update
+sudo port upgrade bash
+</pre>
+        <p>Once you've updated, try the exploit again and report back your findings.</p>
+           <a name="api"></a>
+</div></div>
+
+
+
+
+                          <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-code"></i> API</h3>
+            </div>
+            <div class="panel-body">
+        <p>If you're a third party developer and you'd like to integrate shellshocker into your application (perfect for browser extensions), here is the API.</p>
+        <h4>Shock API</h4>
+        <p>Send a <strong>GET</strong> or <strong>POST</strong> request to:</p>
+        <pre>https://shellshocker.net/shock?url=https://example.com</pre>
+        <p>You will get a JSON object with a <strong>status</strong> and a <strong>message</strong>. 
+        <p><strong>status</strong> of 0 (Failure) with a failure <strong>message</strong>. <strong>status</strong> of 1 (Vulnerable) with a <strong>message</strong>. <strong>status</strong> of 2 (Maybe) and a <strong>message</strong>.</p>
+        <h4>Shock Stats API</h4>
+         <p>Send a <strong>GET</strong> request to:</p>
+          <pre>https://shellshocker.net/stats</pre>
+          <p>You will get a JSON object with <strong>total_vulnerable</strong> and <strong>total</strong> tests.
+                  <a name="comment"></a>
+          </div></div>
+                          <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-exclamation-triangle"></i> Server Admins</h3>
+            </div>
+            <div class="panel-body">
+            <p>Welcome! You're probably here because you see messages in your access logs that look like this:</p>
+            <pre>#Your system may be vulnerable to ShellShock. Please visit https://shellshocker.net/ for more information.</pre>
+            <p>No need to worry, everything you need to know is on this page. Learn how to test and patch your server, just <a href="#fix">click here</a> to get started.</p>
+            </div></div>
+                          <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-comments"></i> Comments</h3>
+            </div>
+            <div class="panel-body">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'shellshocker'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div></div>
+        <!-- /container -->
+        <script type="text/javascript">
+        var addthis_share = addthis_share || {}
+        addthis_share = {
+            passthrough: {
+                twitter: {
+                    via: "shellshockernet"
+                }
+            }
+        }
+        </script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- shellshocker.net -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1808672741905857" data-ad-slot="8928803123" data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/shellshock.min.js?7"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5423ce5b6319e090" async></script>
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//shellshocker.net/analytics/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 1]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+</script>
+<noscript><p><img src="//shellshocker.net/analytics/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+</body>
+
+</html>
