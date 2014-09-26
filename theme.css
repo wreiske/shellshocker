@@ -1,6 +1,49 @@
+@import url("//fast.fonts.com/t/1.css?apiType=css&projectid=dbd42566-e357-4bc0-9934-781aad274b2e");
+@font-face{font-family:"Helvetica Neue Webfont";font-weight:200;font-style:normal;src:url("//www.mieweb.com/fonts/helveticaneue/ultra-light.eot");src:url("//www.mieweb.com/fonts/helveticaneue/ultra-light.eot?#iefix") format("embedded-opentype"), url("//www.mieweb.com/fonts/helveticaneue/ultra-light.woff") format("woff"), url("//www.mieweb.com/fonts/helveticaneue/ultra-light.ttf") format("truetype"), url("//www.mieweb.com/fonts/helveticaneue/ultra-light.svg#HelveticaNeueWebfont") format("svg")}
+@font-face{font-family:"Helvetica Neue Webfont";font-weight:200;font-style:italic;src:url("//www.mieweb.com/fonts/helveticaneue/ultra-light-italic.eot");src:url("//www.mieweb.com/fonts/helveticaneue/ultra-light-italic.eot?#iefix") format("embedded-opentype"), url("//www.mieweb.com/fonts/helveticaneue/ultra-light-italic.woff") format("woff"), url("//www.mieweb.com/fonts/helveticaneue/ultra-light-italic.ttf") format("truetype"), url("//www.mieweb.com/fonts/helveticaneue/ultra-light-italic.svg#HelveticaNeueWebfont") format("svg")}
+@font-face{font-family:"Helvetica Neue Webfont";font-weight:300;font-style:normal;src:url("//www.mieweb.com/fonts/helveticaneue/light.eot");src:url("//www.mieweb.com/fonts/helveticaneue/light.eot?#iefix") format("embedded-opentype"), url("//www.mieweb.com/fonts/helveticaneue/light.woff") format("woff"), url("//www.mieweb.com/fonts/helveticaneue/light.ttf") format("truetype"), url("//www.mieweb.com/fonts/helveticaneue/light.svg#HelveticaNeueWebfont") format("svg")}
+@font-face{font-family:"Helvetica Neue Webfont";font-weight:300;font-style:italic;src:url("//www.mieweb.com/fonts/helveticaneue/light-italic.eot");src:url("//www.mieweb.com/fonts/helveticaneue/light-italic.eot?#iefix") format("embedded-opentype"), url("//www.mieweb.com/fonts/helveticaneue/light-italic.woff") format("woff"), url("//www.mieweb.com/fonts/helveticaneue/light-italic.ttf") format("truetype"), url("//www.mieweb.com/fonts/helveticaneue/light-italic.svg#HelveticaNeueWebfont") format("svg")}
+@font-face{font-family:"Helvetica Neue Webfont";font-weight:400;font-style:normal;src:url("//www.mieweb.com/fonts/helveticaneue/regular.eot");src:url("//www.mieweb.com/fonts/helveticaneue/regular.eot?#iefix") format("embedded-opentype"), url("//www.mieweb.com/fonts/helveticaneue/regular.woff") format("woff"), url("//www.mieweb.com/fonts/helveticaneue/regular.ttf") format("truetype"), url("//www.mieweb.com/fonts/helveticaneue/regular.svg#HelveticaNeueWebfont") format("svg")}
+@font-face{font-family:"Helvetica Neue Webfont";font-weight:400;font-style:italic;src:url("//www.mieweb.com/fonts/helveticaneue/italic.eot");src:url("//www.mieweb.com/fonts/helveticaneue/italic.eot?#iefix") format("embedded-opentype"), url("//www.mieweb.com/fonts/helveticaneue/italic.woff") format("woff"), url("//www.mieweb.com/fonts/helveticaneue/italic.ttf") format("truetype"), url("//www.mieweb.com/fonts/helveticaneue/italic.svg#HelveticaNeueWebfont") format("svg")}
+@font-face{font-family:"Helvetica Neue Webfont";font-weight:500;font-style:normal;src:url("//www.mieweb.com/fonts/helveticaneue/medium.eot");src:url("//www.mieweb.com/fonts/helveticaneue/medium.eot?#iefix") format("embedded-opentype"), url("//www.mieweb.com/fonts/helveticaneue/medium.woff") format("woff"), url("//www.mieweb.com/fonts/helveticaneue/medium.ttf") format("truetype"), url("//www.mieweb.com/fonts/helveticaneue/medium.svg#HelveticaNeueWebfont") format("svg")}
+@font-face{font-family:"Helvetica Neue Webfont";font-weight:500;font-style:italic;src:url("//www.mieweb.com/fonts/helveticaneue/medium-italic.eot");src:url("//www.mieweb.com/fonts/helveticaneue/medium-italic.eot?#iefix") format("embedded-opentype"), url("//www.mieweb.com/fonts/helveticaneue/medium-italic.woff") format("woff"), url("//www.mieweb.com/fonts/helveticaneue/medium-italic.ttf") format("truetype"), url("//www.mieweb.com/fonts/helveticaneue/medium-italic.svg#HelveticaNeueWebfont") format("svg")}
+@font-face{font-family:"Helvetica Neue Webfont";font-weight:700;font-style:normal;src:url("//www.mieweb.com/fonts/helveticaneue/bold.eot");src:url("//www.mieweb.com/fonts/helveticaneue/bold.eot?#iefix") format("embedded-opentype"), url("//www.mieweb.com/fonts/helveticaneue/bold.woff") format("woff"), url("//www.mieweb.com/fonts/helveticaneue/bold.ttf") format("truetype"), url("//www.mieweb.com/fonts/helveticaneue/bold.svg#HelveticaNeueWebfont") format("svg")}
+@font-face{font-family:"Helvetica Neue Webfont";font-weight:700;font-style:italic;src:url("//www.mieweb.com/fonts/helveticaneue/bold-italic.eot");src:url("//www.mieweb.com/fonts/helveticaneue/bold-italic.eot?#iefix") format("embedded-opentype"), url("//www.mieweb.com/fonts/helveticaneue/bold-italic.woff") format("woff"), url("//www.mieweb.com/fonts/helveticaneue/bold-italic.ttf") format("truetype"), url("//www.mieweb.com/fonts/helveticaneue/bold-italic.svg#HelveticaNeueWebfont") format("svg")}
+@font-face{font-family:"Helvetica Neue Webfont";font-weight:900;font-style:normal;src:url("//www.mieweb.com/fonts/helveticaneue/black.eot");src:url("//www.mieweb.com/fonts/helveticaneue/black.eot?#iefix") format("embedded-opentype"), url("//www.mieweb.com/fonts/helveticaneue/black.woff") format("woff"), url("//www.mieweb.com/fonts/helveticaneue/black.ttf") format("truetype"), url("//www.mieweb.com/fonts/helveticaneue/black.svg#HelveticaNeueWebfont") format("svg")}
+@font-face{font-family:"Helvetica Neue Webfont";font-weight:900;font-style:italic;src:url("//www.mieweb.com/fonts/helveticaneue/black-italic.eot");src:url("//www.mieweb.com/fonts/helveticaneue/black-italic.eot?#iefix") format("embedded-opentype"), url("//www.mieweb.com/fonts/helveticaneue/black-italic.woff") format("woff"), url("//www.mieweb.com/fonts/helveticaneue/black-italic.ttf") format("truetype"), url("//www.mieweb.com/fonts/helveticaneue/black-italic.svg#HelveticaNeueWebfont") format("svg")}
+
 body {
-  padding-top: 70px;
-  padding-bottom: 30px;
+	background-color: #EFEFF0;
+	padding-top: 57px;
+	padding-bottom: 30px;
+	font-family: "Helvetica Neue Webfont", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a {
+	color: #e56020;
+}
+a:hover, a:focus {
+	color: #C94F1F;
+}
+
+img[src*="shellshocker.png"] {
+	max-height: 113px;
+}
+
+pre {
+	background-color: #FAFAFA;
+}
+
+.alert {
+	text-shadow: 0 1px 0 rgba(0, 0, 0,.5);
+	-webkit-box-shadow: inset 0 -1px 0 rgba(255,255,255,.25),0 1px 2px rgba(0,0,0,.05); */
+	box-shadow: inset 0 -1px 0 rgba(255,255,255,.25),0 1px 2px rgba(0,0,0,.05);
+}
+
+.alert-info, .alert-danger {
+	border-color: #8a1f03;
+	background: #bf311a;
+	color: white;
 }
 
 .theme-dropdown .dropdown-menu {
@@ -15,4 +58,72 @@ body {
 
 .theme-showcase .navbar .container {
   width: auto;
+}
+
+.navbar-static-top, .navbar-fixed-top, .navbar-fixed-bottom {
+	background: #5f6062;
+}
+
+.navbar-inverse .navbar-nav>.active>a {
+	background: #231F20;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: #fff;
+	text-transform: uppercase;
+	font-size: .9em;
+}
+
+.jumbotron {
+	background-color: #EFEFF0;
+}
+
+.jumbotron p {
+	font-weight: 300;
+}
+
+.input-group-addon {
+	background-color: #EFEFF0;
+}
+
+.panel-default>.panel-heading {
+	background-image: -webkit-linear-gradient(top,#F7F7F7 0,#EFEFF0 100%);
+	background-image: -o-linear-gradient(top,#F7F7F7 0,#EFEFF0 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#F7F7F7),to(#EFEFF0));
+	background-image: linear-gradient(to bottom,#F7F7F7 0,#EFEFF0 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffF7F7F7', endColorstr='#ffEFEFF0', GradientType=0);
+}
+
+.navbar {
+	min-height: 36px;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #fff;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus,
+.navbar>.container .navbar-brand:hover, .navbar>.container-fluid .navbar-brand:hover {
+	background-color: rgba(0, 0, 0, .15);
+}
+
+@media (min-width: 768px) {
+	body {
+		padding-top: 93px;
+	}
+	
+	.navbar-brand {
+		padding: 8px 15px;
+		height: 36px;
+	}
+	.navbar-nav>li>a {
+		padding-top: 8px;
+		padding-bottom: 8px;
+	}
+}
+
+@media (min-width: 992px) {
+	body {
+		padding-top: 57px;
+	}
 }
