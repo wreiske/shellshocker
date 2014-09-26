@@ -76,6 +76,10 @@ pre {
 
 .jumbotron {
 	background-color: #EFEFF0;
+	padding-right: 0 !important;
+	padding-left: 0 !important;
+	padding-top: 1px !important;
+	padding-bottom: 1em !important;
 }
 
 .jumbotron p {
