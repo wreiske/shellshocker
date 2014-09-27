@@ -18,7 +18,9 @@ body {
 	padding-bottom: 30px;
 	font-family: "Helvetica Neue Webfont", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
+.alert{
+	text-shadow: none;
+}
 a {
 	color: #e56020;
 }

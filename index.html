@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Shellshock BASH Vulnerability tester. Are you vulnerable to #shellshock? (CVE-2014-6271 and CVE-2014-7169)">
-    <meta name="keywords" content="Shellshock,BASH,vulnerability,exploit,zeroday,heartbleed,linux,osx,sh,gnu,fix,ubuntu,centos,redhat,shellshocker,CVE-2014-6271,upgrade,4.3,apache,nginx,cgi,mavericks,yosemite,fedora,test,tester,logo,bashbleed,bashbug,vulnerable,hack,aftershock,CVE-2014-7169,check,checker,patcher,patch,stats,statistics,one liner">
+    <meta name="keywords" content="Shellshock,BASH,vulnerability,exploit,zeroday,heartbleed,linux,osx,sh,gnu,fix,ubuntu,centos,redhat,shellshocker,CVE-2014-6271,upgrade,4.3,apache,nginx,cgi,mavericks,yosemite,fedora,test,tester,logo,bashbleed,bashbug,vulnerable,hack,aftershock,CVE-2014-7169,check,checker,patcher,patch,stats,statistics,one liner,CVE-2014-7186,CVE-2014-7187">
     <meta name="author" content="@williamreiske">
     <link rel="icon" href="shellshocker.png">
     <meta property="og:image" content="https://shellshocker.net/shellshocker.png" />
@@ -18,7 +18,7 @@
     <!-- Bootstrap theme -->
     <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/theme.min.css?rev=3" rel="stylesheet">
+    <link href="/theme.min.css?rev=4" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -87,7 +87,7 @@
         <div class="jumbotron">
             <h1>What is #shellshock?</h1>
             <img height="150px" style="float:left;padding-right:20px;" src="/shellshocker.png" />
-            <p>Shellshock (<a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">CVE-2014-6271</a> and <a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169">CVE-2014-7169</a>) is an vulnerability in GNU's <a target="_blank" href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a> shell that gives attackers access to run <a target="_blank" href="http://en.wikipedia.org/wiki/Arbitrary_code_execution">remote commands</a> on a vulnerable system. If your system has not updated bash in the last 24 hours (See <a target="_blank" href="http://ftp.gnu.org/gnu/bash/bash-4.3-patches/?C=M;O=D">patch history</a>), you're
+            <p>Shellshock (<a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">CVE-2014-6271</a>, <a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169">CVE-2014-7169</a>, <a target="_blank" href="https://access.redhat.com/security/cve/CVE-2014-7186">CVE-2014-7186</a>, <a target="_blank" href="https://access.redhat.com/security/cve/CVE-2014-7187">CVE-2014-7187</a>) is an vulnerability in GNU's <a target="_blank" href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a> shell that gives attackers access to run <a target="_blank" href="http://en.wikipedia.org/wiki/Arbitrary_code_execution">remote commands</a> on a vulnerable system. If your system has not updated bash in the last 24 hours (See <a target="_blank" href="http://ftp.gnu.org/gnu/bash/bash-4.3-patches/?C=M;O=D">patch history</a>), you're
                 <strong>most definitely vulnerable</strong> and have been since first boot. This security vulnerability affects versions 1.14 (released in 1994) to the most recent version 4.3 according to <a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">NVD</a>.</p>
             <p>You can use this website to test if your system is vulnerable, and also learn how to patch the vulnerability so you are no longer at risk for attack.</p>
             <p>Join the discussion <a href="#comment">below</a>.</p>
@@ -162,7 +162,7 @@ echo "https://shellshocker.net/"
         </p>
         <h4>Exploit 2 (<a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169">CVE-2014-7169</a>)</h4>
         <p>Even after upgrading bash you may still be vulnerable to this exploit. Try running the following code.</p>
-        <pre>env X='() { (a)=>\' bash -c "echo date"; cat echo ; rm -f echo</pre>
+        <pre>env X='() { (shellshocker.net)=>\' bash -c "echo date"; cat echo ; rm -f echo</pre>
         <p>If the above command outputs the current date (it may also show errors), you are still vulnerable.</p>
         <h4>Exploit 3 (???)</h4>
         <p>
