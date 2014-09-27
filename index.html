@@ -18,7 +18,7 @@
     <!-- Bootstrap theme -->
     <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/theme.min.css?rev=4" rel="stylesheet">
+    <link href="/theme.min.css?rev=5" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -40,7 +40,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">
-                    <img border="0" height="20px" src="/shellshocker.png" />&nbsp; #Shellshocker</a>
+                    <img border="0" height="20" src="/shellshocker.png" alt="#Shellshocker" />&nbsp; #Shellshocker</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -66,29 +66,28 @@
     </div>
 
     <div class="container theme-showcase" role="main">
-    <center>
+    <div class="center">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- shellshocker.net -->
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1808672741905857" data-ad-slot="8928803123" data-ad-format="auto"></ins>
         <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
-        </center>
+        </div>
         <br />
         <!-- Main jumbotron for a primary marketing message or call to action -->
-<p>
+
 <div class="alert alert-info" style="text-align:center;" role="alert">
       Now taking pull requests @ <a target="_blank" style="color:#fff;" href="https://github.com/wreiske/shellshocker">https://github.com/wreiske/shellshocker</a>
     </div>
     <div class="alert alert-info" style="text-align:center;font-size:20px;" role="alert" id="test_stats">
       Loading Stats....
     </div>
-        </p>
+
         <div class="jumbotron">
             <h1>What is #shellshock?</h1>
-            <img height="150px" style="float:left;padding-right:20px;" src="/shellshocker.png" />
-            <p>Shellshock (<a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">CVE-2014-6271</a>, <a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169">CVE-2014-7169</a>, <a target="_blank" href="https://access.redhat.com/security/cve/CVE-2014-7186">CVE-2014-7186</a>, <a target="_blank" href="https://access.redhat.com/security/cve/CVE-2014-7187">CVE-2014-7187</a>) is an vulnerability in GNU's <a target="_blank" href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a> shell that gives attackers access to run <a target="_blank" href="http://en.wikipedia.org/wiki/Arbitrary_code_execution">remote commands</a> on a vulnerable system. If your system has not updated bash in the last 24 hours (See <a target="_blank" href="http://ftp.gnu.org/gnu/bash/bash-4.3-patches/?C=M;O=D">patch history</a>), you're
-                <strong>most definitely vulnerable</strong> and have been since first boot. This security vulnerability affects versions 1.14 (released in 1994) to the most recent version 4.3 according to <a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">NVD</a>.</p>
+            <img height="150" style="float:left;padding-right:20px;" src="/shellshocker.png" alt="" />
+            <p>Shellshock (<a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">CVE-2014-6271</a>, <a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169">CVE-2014-7169</a>, <a target="_blank" href="https://access.redhat.com/security/cve/CVE-2014-7186">CVE-2014-7186</a>, <a target="_blank" href="https://access.redhat.com/security/cve/CVE-2014-7187">CVE-2014-7187</a>) is a vulnerability in GNU's <a target="_blank" href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a> shell that gives attackers access to run <a target="_blank" href="http://en.wikipedia.org/wiki/Arbitrary_code_execution">remote commands</a> on a vulnerable system. If your system has not updated bash in the last 24 hours (See <a target="_blank" href="http://ftp.gnu.org/gnu/bash/bash-4.3-patches/?C=M;O=D">patch history</a>), you're <strong>most definitely vulnerable</strong> and have been since first boot. This security vulnerability affects versions 1.14 (released in 1994) to the most recent version 4.3 according to <a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">NVD</a>.</p>
             <p>You can use this website to test if your system is vulnerable, and also learn how to patch the vulnerability so you are no longer at risk for attack.</p>
             <p>Join the discussion <a href="#comment">below</a>.</p>
             <a href="https://twitter.com/shellshockernet" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @shellshockernet</a>
@@ -103,27 +102,25 @@
                 <h3 class="panel-title"><i class="fa fa-bolt"></i> Website Shocker</h3>
             </div>
             <div class="panel-body">
-        <span id="loading_tester">
-            <center>
+        <div id="loading_tester">
+            <div class="center">
                 <p>
                     <strong>Loading website tester...</strong>
                 </p>
                 <p><i class="fa fa-spinner fa-spin"></i>
                 </p>
-            </center>
-        </span>
+            </div>
+        </div>
 
-        <span id="shock_tester" style="display:none;">
+        <div id="shock_tester" style="display:none;">
             <p>
                 You can test if a system is vulnerable by using the form below. Just provide a http or https url and test away!
             </p>
             <span id="test_errors"></span>
-            <p>
-                <div class="input-group">
-                    <span class="input-group-addon">Url</span>
-                    <input type="text" class="form-control" placeholder="https://example.org/cgi-bin/shockme.cgi" id="test_url">
-                </div>
-            </p>
+            <div class="input-group">
+                <span class="input-group-addon">Url</span>
+                <input type="text" class="form-control" placeholder="https://example.org/cgi-bin/shockme.cgi" id="test_url">
+            </div>
             <p>
                 <button type="button" id="btn_shock" class="btn btn-lg btn-default pull-right">Shock!</button>
             </p>
@@ -131,14 +128,13 @@
                 <small>Please test responsibly. All tests details are logged. Do not test against websites that you do not have permission to test against. All data is archived in case of abuse.</small>
             </p>
             <p>Here is an example script that is vulnerable. Place this in your /cgi-bin/shockme.cgi and try hitting it with the shock tester.</p>
-            <p>
             <pre>#!/bin/bash
 echo "Content-type: text/html"
 echo ""
 echo "https://shellshocker.net/"
-</pre></p>
+</pre>
 <p><strong>Last updated Friday September 26th at 4:43PM EST</strong>: <small>This website tester will now wait for a valid response before returning the state of the vulnerability. If the server responds with a 500 we assume you're vulnerable and we display the response immediately without waiting. If we get any other response code we will wait 3 seconds for a reply from your server and display if you're vulnerable or not.</small></p>
-        </span>
+        </div>
 
 <a name="systemtest"></a>
         </div>
@@ -149,9 +145,9 @@ echo "https://shellshocker.net/"
                 <h3 class="panel-title"><i class="fa fa-terminal"></i> Testing Your System</h3>
             </div>
             <div class="panel-body">
-                     <center>
-                <img class="img-responsive" src="/shellshocked.jpg" />
-            </center>
+                     <div class="center">
+                <img class="img-responsive" src="/shellshocked.jpg" alt="" />
+            </div>
         <h4>Exploit 1 (<a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">CVE-2014-6271</a>)</h4>
         <p>
             There are a few different ways to test if your system is vulnerable to shellshock. Try running the following command in a shell.
@@ -166,7 +162,7 @@ echo "https://shellshocker.net/"
         <p>If the above command outputs the current date (it may also show errors), you are still vulnerable.</p>
         <h4>Exploit 3 (???)</h4>
         <p>
-            Here is another variation of the exploit. <i>Please leave a comment below if you know the CVE of this exploit.</i></p>
+            Here is another variation of the exploit. <i>Please leave a comment below if you know the CVE of this exploit.</i>
         </p>
         <pre>env -i X=' () { }; echo hello' bash -c 'date'</pre>
         <p>If the above command outputs "hello", you are vulnerable.</p>
@@ -213,12 +209,12 @@ wget https://ftp.gnu.org/gnu/bash/bash-4.3.tar.gz
 for i in $(seq -f "%03g" 0 26); do wget     https://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-$i; done
 tar zxvf bash-4.3.tar.gz 
 cd bash-4.3
-for i in $(seq -f "%03g" 0 26);do patch -p0 < ../bash43-$i; done
-./configure && make && make install
+for i in $(seq -f "%03g" 0 26);do patch -p0 &lt; ../bash43-$i; done
+./configure &amp;&amp; make &amp;&amp; make install
 </pre>
 
         <h4>OS X</h4>
-        <p>If you're running OS X, you will need to download and compile bash yourself using <a target="_blank" href="http://brew.sh/#install">brew</a> or <a target="_blank" src="https://www.macports.org/install.php">MacPorts</a>.</p>
+        <p>If you're running OS X, you will need to download and compile bash yourself using <a target="_blank" href="http://brew.sh/#install">brew</a> or <a target="_blank" href="https://www.macports.org/install.php">MacPorts</a>.</p>
         <p>We recommend using brew - Go to <a target="_blank" href="http://brew.sh/#install">http://brew.sh/</a> and install brew on your system.</p>
         <p>Once you have brew installed, run the following commands to update your system</p>
         <pre>brew update
@@ -303,14 +299,14 @@ sudo port upgrade bash
         <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
-        <p><center><small>Like the site? bitcoin: <a href="bitcoin:16fRZC2r4Nwn6fxMnXfPvNdJLgWpvaiVTG">16fRZC2r4Nwn6fxMnXfPvNdJLgWpvaiVTG</a></small></center></p>
+        <p style="text-align:center"><small>Like the site? bitcoin: <a href="bitcoin:16fRZC2r4Nwn6fxMnXfPvNdJLgWpvaiVTG">16fRZC2r4Nwn6fxMnXfPvNdJLgWpvaiVTG</a></small></p>
     </div>
-    </div>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="/shellshock.min.js?7"></script>
+    <script src="/shellshock.min.js?8"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5423ce5b6319e090" async></script>
     <!-- Piwik -->

@@ -18,9 +18,9 @@ $(function() {
             })
             .fail(function() {
                 $("#test_stats").html('Error loading stats... Connection issue?');
-            })
-
+            });
     }
+
     $("#btn_shock").click(function() {
         if (!shocking) {
             shocking = true;
@@ -29,6 +29,7 @@ $(function() {
             if (shock_url.length <= 7) {
                 $("#test_errors").html('<div class="alert alert-danger" role="alert"><strong>Invalid URL</strong> Please enter a valid url to test and try again.</div>');
                 $("#btn_shock").html("Shock!");
+                shocking = false;
             } else {
                 var jqxhr = $.getJSON("/shock?url=" + shock_url, function(data) {
                         if (data.status == 1) {
@@ -44,30 +45,16 @@ $(function() {
                             $("#test_errors").html('<div class="alert alert-info" role="alert"><strong>Error!</strong> ' + data.message + '</div>');
                         }
                         $("#btn_shock").html("Shock!");
+                        shocking = false;
                     })
                     .fail(function() {
                         $("#test_errors").html('<div class="alert alert-danger" role="alert"><strong>Error!</strong> Something bad happened, but it wasn\'t the vulnerability. Try again later..?</div>');
                         $("#btn_shock").html("Shock!");
-                    })
-
+                        shocking = false;
+                    });
             }
-            shocking = false;
         } else {
             console.log('Already shocking!');
         }
     })
-    /*
-      <div class="alert alert-success" role="alert">
-        <strong>Well done!</strong> You successfully read this important alert message.
-      </div>
-      <div class="alert alert-info" role="alert">
-        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
-      </div>
-      <div class="alert alert-warning" role="alert">
-        <strong>Warning!</strong> Best check yo self, you're not looking too good.
-      </div>
-      <div class="alert alert-danger" role="alert">
-        <strong>Oh snap!</strong> Change a few things up and try submitting again.
-      </div>
-	*/
 })
