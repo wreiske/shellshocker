@@ -25,6 +25,7 @@ $(function() {
         if (!shocking) {
             shocking = true;
             $("#btn_shock").html('Shocking... <i class="fa fa-spinner fa-spin"></i>');
+            help_complete_url(); // Auto-correct shema-less URL's for ease of use
             var shock_url = $("#test_url").val();
             if (shock_url.length <= 7) {
                 $("#test_errors").html('<div class="alert alert-danger" role="alert"><strong>Invalid URL</strong> Please enter a valid url to test and try again.</div>');
@@ -57,4 +58,19 @@ $(function() {
             console.log('Already shocking!');
         }
     })
+
 })
+
+// If user doesn't specify a schema, suppose it's 'http'
+// and autocorrect the entry
+function help_complete_url() {
+    var shock_url = $("#test_url").val();
+    var url_components = shock_url.split(":");
+    if(url_components[0].length == shock_url.length) {
+        //For now suppose if no schema specified, they wanted 'http'
+        new_shock_url = 'http://'+shock_url;
+        $("#test_url").val(new_shock_url);
+    }
+}
+
+
