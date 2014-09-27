@@ -87,8 +87,8 @@
         <div class="jumbotron">
             <h1>What is #shellshock?</h1>
             <img height="150px" style="float:left;padding-right:20px;" src="/shellshocker.png" />
-            <p>Shellshock (CVE-2014-6271 and CVE-2014-7169) is an vulnerability in GNU's <a target="_BLANK" href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a> shell that gives attackers access to run <a target="_BLANK" href="http://en.wikipedia.org/wiki/Arbitrary_code_execution">remote commands</a> on a vulnerable system. If your system has not updated bash in the last 24 hours, you're
-                <strong>most definitely vulnerable</strong> and have been since first boot. This security vulnerability affects versions 1.14 (released in 1994) to the most recent version 4.3 according to <a target="_BLANK" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">NVD</a>.</p>
+            <p>Shellshock (<a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">CVE-2014-6271</a> and <a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169">CVE-2014-7169</a>) is an vulnerability in GNU's <a target="_blank" href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a> shell that gives attackers access to run <a target="_blank" href="http://en.wikipedia.org/wiki/Arbitrary_code_execution">remote commands</a> on a vulnerable system. If your system has not updated bash in the last 24 hours, you're
+                <strong>most definitely vulnerable</strong> and have been since first boot. This security vulnerability affects versions 1.14 (released in 1994) to the most recent version 4.3 according to <a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">NVD</a>.</p>
             <p>You can use this website to test if your system is vulnerable, and also learn how to patch the vulnerability so you are no longer at risk for attack.</p>
             <p>Join the discussion <a href="#comment">below</a>.</p>
             <a href="https://twitter.com/shellshockernet" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @shellshockernet</a>
@@ -152,24 +152,24 @@ echo "https://shellshocker.net/"
                      <center>
                 <img class="img-responsive" src="/shellshocked.jpg" />
             </center>
-        <h4>Exploit 1 (CVE-2014-6271)</h4>
+        <h4>Exploit 1 (<a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">CVE-2014-6271</a>)</h4>
         <p>
             There are a few different ways to test if your system is vulnerable to shellshock. Try running the following command in a shell.
         </p>
         <pre>env x='() { :;}; echo vulnerable' bash -c "echo this is a test"</pre>
         <p>
-            If you see "vulnerable" you need to <a href="#update">update bash</a>. Otherwise, you should be good to go.
+            If you see "vulnerable" you need to <a href="#fix">update bash</a>. Otherwise, you should be good to go.
         </p>
-        <h4>Exploit 2 (CVE-2014-7169)</h4>
+        <h4>Exploit 2 (<a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169">CVE-2014-7169</a>)</h4>
         <p>Even after upgrading bash you may still be vulnerable to this exploit. Try running the following code.</p>
         <pre>env X='() { (a)=>\' bash -c "echo date"; cat echo ; rm -f echo</pre>
         <p>If the above command outputs the current date (it may also show errors), you are still vulnerable.</p>
-         <h4>Exploit 3 (???)</h4>
+        <h4>Exploit 3 (???)</h4>
         <p>
             Here is another variation of the exploit. <i>Please leave a comment below if you know the CVE of this exploit.</i></p>
         </p>
         <pre>env -i X=' () { }; echo hello' bash -c 'date'</pre>
-
+        <p>If the above command outputs "hello", you are vulnerable.</p>
         <p>If you've tested your system, please leave a comment below. Don't forget to include your bash version and what OS you're running. Type
             <code>bash --version</code> for bash, and
             <code>cat /etc/*release*</code> for your OS.</p>
@@ -183,7 +183,7 @@ echo "https://shellshocker.net/"
             <div class="alert alert-info" role="alert"><strong>Please Note!</strong> <p>The patch provided may only fix the first exploit on some systems. It's highly recommended that you still update your system and patch bash, even if it only fixes the first exploit on your system. Please check back occasionally for updates, we will keep this page up to date with the latest patches available.</p></div>
         <h4>CentOS, Ubuntu, Linux systems</h4>
         <p>
-            Shellshock is a vulnerability in <a target="_BLANK" href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a>. In order to patch your vulnerable system, you will need to get the most up to date version of bash available from <a target="_BLANK" href="http://www.gnu.org/software/bash/">GNU.org</a>.
+            Shellshock is a vulnerability in <a target="_blank" href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a>. In order to patch your vulnerable system, you will need to get the most up to date version of bash available from <a target="_blank" href="http://www.gnu.org/software/bash/">GNU.org</a>.
         </p>
         <p>
             Depending on your package manager (yum, apt-get, etc) you may be able to just run a yum update and you'll be good to go.
@@ -199,6 +199,7 @@ echo "https://shellshocker.net/"
         <p>
             If your package manager doesn't find an update, you will need to build bash from src.
         </p>
+        <h4>Building From Source</h4>
         <p>You can patch bash with one command using our bash patcher, just run the following command and you should be good to go!</p>
         <p>Make sure you have patch installed before you run this command. <code>sudo apt-get install patch (yum install patch) etc...</code>
 
@@ -209,16 +210,16 @@ mkdir bash
 cd bash
 wget https://ftp.gnu.org/gnu/bash/bash-4.3.tar.gz
 #download all patches
-for i in $(seq -f "%03g" 0 25); do wget     https://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-$i; done
+for i in $(seq -f "%03g" 0 26); do wget     https://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-$i; done
 tar zxvf bash-4.3.tar.gz 
 cd bash-4.3
-for i in $(seq -f "%03g" 0 25);do patch -p0 < ../bash43-$i; done
+for i in $(seq -f "%03g" 0 26);do patch -p0 < ../bash43-$i; done
 ./configure && make && make install
 </pre>
 
         <h4>OS X</h4>
-        <p>If you're running OS X, you will need to download and compile bash yourself using <a target="_BLANK" href="http://brew.sh/#install">brew</a> or <a target="_BLANK" src="https://www.macports.org/install.php">MacPorts</a>.</p>
-        <p>We recommend using brew - Go to <a target="_BLANK" href="http://brew.sh/#install">http://brew.sh/</a> and install brew on your system.</p>
+        <p>If you're running OS X, you will need to download and compile bash yourself using <a target="_blank" href="http://brew.sh/#install">brew</a> or <a target="_blank" src="https://www.macports.org/install.php">MacPorts</a>.</p>
+        <p>We recommend using brew - Go to <a target="_blank" href="http://brew.sh/#install">http://brew.sh/</a> and install brew on your system.</p>
         <p>Once you have brew installed, run the following commands to update your system</p>
         <pre>brew update
 brew install bash
