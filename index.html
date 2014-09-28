@@ -168,7 +168,7 @@ echo "https://shellshocker.net/"
         <p>If the above command outputs "hello", you are vulnerable.</p>
         <h4>Exploit 4 (<a target="_blank" href="https://access.redhat.com/security/cve/CVE-2014-7186">CVE-2014-7186</a>)</h4>
         <p>Even after upgrading bash you may still be vulnerable to this exploit. Try running the following code.</p>
-        <pre>bash -c 'true <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF' ||
+        <pre>bash -c 'true &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF' ||
 echo "CVE-2014-7186 vulnerable, redir_stack"</pre>
         <h4>Exploit 5 (<a target="_blank" href="https://access.redhat.com/security/cve/CVE-2014-7187">CVE-2014-7187</a>)</h4>
         <p>Even after upgrading bash you may still be vulnerable to this exploit. Try running the following code.</p>
