@@ -18,7 +18,7 @@
     <!-- Bootstrap theme -->
     <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/theme.min.css?rev=5" rel="stylesheet">
+    <link href="/theme.min.css?rev=09272014-1147pm" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -167,14 +167,12 @@ echo "https://shellshocker.net/"
         <pre>env -i X=' () { }; echo hello' bash -c 'date'</pre>
         <p>If the above command outputs "hello", you are vulnerable.</p>
         <h4>Exploit 4 (<a target="_blank" href="https://access.redhat.com/security/cve/CVE-2014-7186">CVE-2014-7186</a>)</h4>
-        <p>Even after upgrading bash you may still be vulnerable to this exploit. Try running the following code.</p>
         <pre>bash -c 'true &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF' ||
 echo "CVE-2014-7186 vulnerable, redir_stack"</pre>
-        <h4>Exploit 5 (<a target="_blank" href="https://access.redhat.com/security/cve/CVE-2014-7187">CVE-2014-7187</a>)</h4>
-        <p>Even after upgrading bash you may still be vulnerable to this exploit. Try running the following code.</p>
+	<h4>Exploit 5 (<a target="_blank" href="https://access.redhat.com/security/cve/CVE-2014-7187">CVE-2014-7187</a>)</h4>
         <pre>(for x in {1..200} ; do echo "for x$x in ; do :"; done; for x in {1..200} ; do echo done ; done) | bash ||
 echo "CVE-2014-7187 vulnerable, word_lineno"</pre>
-        <hr>
+        <hr />
         <p>If you've tested your system, please leave a comment below. Don't forget to include your bash version and what OS you're running. Type
             <code>bash --version</code> for bash, and
             <code>cat /etc/*release*</code> for your OS.</p>
@@ -315,7 +313,7 @@ sudo port upgrade bash
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="/shellshock.min.js?8"></script>
+    <script src="/shellshock.min.js?rev=09272014-1148pm"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5423ce5b6319e090" async></script>
     <!-- Piwik -->
