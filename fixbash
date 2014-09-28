@@ -1,7 +1,7 @@
 #!/bin/sh
 ##############################################################
 # This is the ShellShocker.net bash updater script.
-# Version 1.0!
+# Version 1.2!
 #
 # Are you looking at this in your web browser, and would like to apply the bash patches?
 # Just open up your terminal and type:
@@ -9,6 +9,8 @@
 #    curl https://shellshock.net/fixbash | sh
 ########
 # REV 4: Added prefix to configure for fedora systems.
+# REV 5: Bumped patch to 26 from 25.
+# REV 6: Bumped patch to 27 from 26.
 ########
 # This script will download bash 4.3 to your home directory, extract, download patches, patch,
 # install patches, and install the fixed bash.
@@ -18,7 +20,7 @@
 echo "----------------------------------------------"
 echo "-- WELCOME TO THE SHELLSHOCKER BASH PATCHER --"
 echo "----------------------------------------------"
-echo "---       Revision 4, 092614-12:55PM       ---"
+echo "---       Revision 6, 092814-1:10AM       ---"
 echo "--- Provided by https://shellshocker.net/  ---"
 echo "----------------------------------------------"
 echo "Creating folders..."
@@ -28,12 +30,12 @@ cd bash-shellshocker
 echo "Downloading Bash..."
 wget https://ftp.gnu.org/gnu/bash/bash-4.3.tar.gz
 echo "Downloading Bash patches..."
-for i in $(seq -f "%03g" 0 25); do wget     https://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-$i; done
+for i in $(seq -f "%03g" 0 27); do wget     https://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-$i; done
 echo "Extracting bash from tar.gz..."
 tar zxvf bash-4.3.tar.gz 
 cd bash-4.3
 echo "Applying Patches..."
-for i in $(seq -f "%03g" 0 25);do patch -p0 < ../bash43-$i; done
+for i in $(seq -f "%03g" 0 27);do patch -p0 < ../bash43-$i; done
 
 echo "Ready to install. Configuring... You may need to type your sudo password here."
 sudo ./configure --prefix=/
@@ -41,6 +43,8 @@ echo "Running make"
 sudo make
 echo "Running make install"
 sudo make install
+sudo cp /bin/bash /usr/local/bin/bash
+
 echo "----------------------------------------------"
 echo "Done! Try opening a new bash shell and checking if your system is still vulnerable."
 echo "Script provided by https://shellshocker.net/"
