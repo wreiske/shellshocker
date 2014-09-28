@@ -48,19 +48,19 @@
                         <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="#websitetest">Website Tester</a>
+                        <a href="/#websitetest">Website Tester</a>
                     </li>
                     <li>
-                        <a href="#systemtest">System Tester</a>
+                        <a href="/#systemtest">System Tester</a>
                     </li>
                     <li>
-                        <a href="#fix">The Fix</a>
+                        <a href="/#fix">The Fix</a>
                     </li>
                     <li>
-                        <a href="#api">API</a>
+                        <a href="/#api">API</a>
                     </li>
                     <li>
-                        <a href="#comment">Comment</a>
+                        <a href="/#comment">Comment</a>
                     </li>
                     <li>
                         <a href="/sitestats">Stats</a>
@@ -113,10 +113,25 @@
              </div>
              </div>
          </div>
-         <a name="comment"></a>
-         <div class="page-header">
-            <h1>Comments</h1>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><i class="fa fa-code-fork"></i> Contributers</h3>
         </div>
+        <div class="panel-body">
+            <div class="container-fluid">
+                <p>Below is a list of some pretty awesome people around the world that have helped make shellshocker.net a better place for everyone. If you'd like to help out, please check out the <a target="_blank" href="https://github.com/wreiske/shellshocker">GitHub project</a>. Give it a star, fork it, do your magic, and send in a pull request. The world will thank you!</p>
+            <span id="contributers"><i class="fa fa-spinner fa-spin"></i> Loading contributers list from GitHub.</span>
+            </div>
+        </div>
+    </div>
+
+    <a name="comment"></a>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><i class="fa fa-comments"></i> Comments</h3>
+        </div>
+        <div class="panel-body">
+
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -134,7 +149,7 @@
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
     </noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
+    </div></div>
     <!-- /container -->
     <script type="text/javascript">
         var addthis_share = addthis_share || {}
@@ -175,6 +190,24 @@
 </script>
 <noscript><p><img src="//shellshocker.net/analytics/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Code -->
+
+<script>
+//This has to be at the end of the page because all the scripts are loaded async
+//https://api.github.com/repos/wreiske/shellshocker/contributors
+$(function(){
+    var jqxhr = $.getJSON("https://api.github.com/repos/wreiske/shellshocker/contributors", function(data) {
+        $("#contributers").html('<div class="row">');
+        $.each(data, function( index, value ) {
+            $("#contributers").append('<div class="col-xs-6 col-md-3"> <div class="thumbnail"><a href="'+value.html_url+'"><img src="'+value.avatar_url+'" alt="'+value.login+'"></a><div class="caption"><h3>'+value.login+'</h3><p><a target="_blank" href="'+value.html_url+'" class="btn btn-primary" role="button">GitHub</a> <a target="_blank" href="https://github.com/wreiske/shellshocker/commits?author='+value.login+'" class="btn btn-default" role="button">'+value.contributions+' contributions</a></p></div></div></div>');
+
+        });
+        $("#contributers").append('</div>');
+    })
+    .fail(function() {
+        $("#contributers").html('Error loading contributers... Connection issues?');
+    });
+})
+</script>
 </body>
 
 </html>
