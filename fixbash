@@ -12,6 +12,7 @@
 # REV 5: Bumped patch to 26 from 25.
 # REV 6: Bumped patch to 27 from 26.
 # REV 7: Not using sudo when logged in as root: https://github.com/wreiske/shellshocker/pull/15
+# REV 8: Updated loops to download and apply up to latest patch: https://github.com/wreiske/shellshocker/pull/17
 ########
 # This script will download bash 4.3 to your home directory, extract, download patches, patch,
 # install patches, and install the fixed bash.
@@ -21,7 +22,7 @@
 echo "----------------------------------------------"
 echo "-- WELCOME TO THE SHELLSHOCKER BASH PATCHER --"
 echo "----------------------------------------------"
-echo "---     Revision 7, 092914-3:18PM ETC      ---"
+echo "---     Revision i, 092914-4:56PM ETC      ---"
 echo "--- Provided by https://shellshocker.net/  ---"
 echo "----------------------------------------------"
 echo "Creating folders..."
