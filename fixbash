@@ -6,7 +6,7 @@
 # Are you looking at this in your web browser, and would like to apply the bash patches?
 # Just open up your terminal and type:
 #
-#    curl https://shellshock.net/fixbash | sh
+#    curl https://shellshocker.net/fixbash | sh
 ########
 # REV 4: Added prefix to configure for fedora systems.
 # REV 5: Bumped patch to 26 from 25.
