@@ -37,13 +37,24 @@ cd bash-4.3
 echo "Applying Patches..."
 for i in $(seq -f "%03g" 1 27);do patch -p0 < ../bash43-$i; done
 
-echo "Ready to install. Configuring... You may need to type your sudo password here."
-sudo ./configure --prefix=/
-echo "Running make"
-sudo make
-echo "Running make install"
-sudo make install
-sudo cp /bin/bash /usr/local/bin/bash
+if [[ "$USER" == "root" ]]
+then
+  echo "Ready to install. Configuring..."
+  ./configure --prefix=/
+  echo "Running make"
+  make
+  echo "Running make install"
+  make install
+  cp /bin/bash /usr/local/bin/bash
+else
+  echo "Ready to install. Configuring... You may need to type your sudo password here."
+  sudo ./configure --prefix=/
+  echo "Running make"
+  sudo make
+  echo "Running make install"
+  sudo make install
+  sudo cp /bin/bash /usr/local/bin/bash
+fi
 
 echo "----------------------------------------------"
 echo "Done! Try opening a new bash shell and checking if your system is still vulnerable."
