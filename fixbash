@@ -31,8 +31,14 @@ cd bash-shellshocker
 echo "Downloading Bash..."
 wget https://ftp.gnu.org/gnu/bash/bash-4.3.tar.gz
 echo "Downloading Bash patches..."
-for ((i=1, rtn=0; $rtn == 0; i++)); do wget https://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-$(printf '%03g' $i); rtn=$?; done
-let "i-=2"
+i=0
+rtn=0
+while [ $rtn -eq 0 ]; do
+    i=`expr $i + 1`
+    wget https://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-$(printf '%03g' $i)
+    rtn=$?
+done
+i=`expr $i - 1`
 echo "Extracting bash from tar.gz..."
 tar zxvf bash-4.3.tar.gz 
 cd bash-4.3
