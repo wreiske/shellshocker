@@ -11,6 +11,7 @@
 # REV 4: Added prefix to configure for fedora systems.
 # REV 5: Bumped patch to 26 from 25.
 # REV 6: Bumped patch to 27 from 26.
+# REV 7: Updated loops to download and apply up to latest patch.
 ########
 # This script will download bash 4.3 to your home directory, extract, download patches, patch,
 # install patches, and install the fixed bash.
@@ -20,7 +21,7 @@
 echo "----------------------------------------------"
 echo "-- WELCOME TO THE SHELLSHOCKER BASH PATCHER --"
 echo "----------------------------------------------"
-echo "---       Revision 6, 092814-1:10AM       ---"
+echo "---     Revision 7, 092714-5:55PM UTC      ---"
 echo "--- Provided by https://shellshocker.net/  ---"
 echo "----------------------------------------------"
 echo "Creating folders..."
@@ -30,12 +31,13 @@ cd bash-shellshocker
 echo "Downloading Bash..."
 wget https://ftp.gnu.org/gnu/bash/bash-4.3.tar.gz
 echo "Downloading Bash patches..."
-for i in $(seq -f "%03g" 1 27); do wget     https://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-$i; done
+for ((i=1, rtn=0; $rtn == 0; i++)); do wget https://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-$(printf '%03g' $i); rtn=$?; done
+let "i-=2"
 echo "Extracting bash from tar.gz..."
 tar zxvf bash-4.3.tar.gz 
 cd bash-4.3
 echo "Applying Patches..."
-for i in $(seq -f "%03g" 1 27);do patch -p0 < ../bash43-$i; done
+for j in $(seq -f "%03g" 1 $i);do patch -p0 < ../bash43-$j; done
 
 echo "Ready to install. Configuring... You may need to type your sudo password here."
 sudo ./configure --prefix=/
