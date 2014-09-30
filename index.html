@@ -95,7 +95,7 @@
         <div class="jumbotron">
             <h1>What is #shellshock?</h1>
             <img height="150" style="float:left;padding-right:20px;" src="/shellshocker.png" alt="" />
-            <p>Shellshock (<a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">CVE-2014-6271</a>, <a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169">CVE-2014-7169</a>, <a target="_blank" href="https://access.redhat.com/security/cve/CVE-2014-7186">CVE-2014-7186</a>, <a target="_blank" href="https://access.redhat.com/security/cve/CVE-2014-7187">CVE-2014-7187</a>, <a target="_blank" href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6277">CVE-2014-6277</a>, <a target="_blank" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6278">CVE-2014-6278</a>) is a vulnerability in GNU's <a target="_blank" href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a> shell that gives attackers access to run <a target="_blank" href="http://en.wikipedia.org/wiki/Arbitrary_code_execution">remote commands</a> on a vulnerable system. If your system has not updated bash in since Sun Sep 28 2014: 1:11AM EST (See <a target="_blank" href="http://ftp.gnu.org/gnu/bash/bash-4.3-patches/?C=M;O=D">patch history</a>), you're <strong>most definitely vulnerable</strong> and have been since first boot. This security vulnerability affects versions 1.14 (released in 1994) to the most recent version 4.3 according to <a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">NVD</a>.</p>
+            <p>Shellshock (<a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">CVE-2014-6271</a>, <a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169">CVE-2014-7169</a>, <a target="_blank" href="https://access.redhat.com/security/cve/CVE-2014-7186">CVE-2014-7186</a>, <a target="_blank" href="https://access.redhat.com/security/cve/CVE-2014-7187">CVE-2014-7187</a>, <a target="_blank" href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6277">CVE-2014-6277</a>, <a target="_blank" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6278">CVE-2014-6278</a>) is a vulnerability in GNU's <a target="_blank" href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a> shell that gives attackers access to run <a target="_blank" href="http://en.wikipedia.org/wiki/Arbitrary_code_execution">remote commands</a> on a vulnerable system. If your system has not updated bash in since Sun Sep 30 2014: 1:32PM EST (See <a target="_blank" href="http://ftp.gnu.org/gnu/bash/bash-4.3-patches/?C=M;O=D">patch history</a>), you're <strong>most definitely vulnerable</strong> and have been since first boot. This security vulnerability affects versions 1.14 (released in 1994) to the most recent version 4.3 according to <a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">NVD</a>.</p>
             <p>You can use this website to test if your system is vulnerable, and also learn how to patch the vulnerability so you are no longer at risk for attack.</p>
             <p>Join the discussion <a href="#comment">below</a>.</p>
             <a href="https://twitter.com/shellshockernet" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @shellshockernet</a>
@@ -154,9 +154,10 @@ echo "https://shellshocker.net/"
                 <h3 class="panel-title"><i class="fa fa-terminal"></i> Testing Your System</h3>
             </div>
             <div class="panel-body">
-                     <div class="center">
-                <img class="img-responsive" src="/shellshocked.jpg" alt="" />
-            </div>
+            <p>To test your system, you can simply run this one liner below to find if you're vulnerable.</p>
+            <pre>curl https://shellshocker.net/shellshock_test.sh | bash</pre>
+            <img class="img-responsive center-block" src="/shellshock_test.jpg" alt="" />
+            <p>If you want to test each exploit individually without running the script above, feel free! They are listed below.</p>
         <h4>Exploit 1 (<a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">CVE-2014-6271</a>)</h4>
         <p>
             There are a few different ways to test if your system is vulnerable to shellshock. Try running the following command in a shell.
@@ -183,6 +184,9 @@ echo "CVE-2014-7186 vulnerable, redir_stack"</pre>
         <pre>(for x in {1..200} ; do echo "for x$x in ; do :"; done; for x in {1..200} ; do echo done ; done) | bash ||
 echo "CVE-2014-7187 vulnerable, word_lineno"</pre>
         <p>A vulnerable system will echo the text "CVE-2014-7187 vulnerable, word_lineno".</p>
+         <h4>Exploit 6 (<a target="_blank" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6278">CVE-2014-6278</a>)</h4>
+        <pre>shellshocker='() { echo You are vulnerable; }' bash -c shellshocker</pre>
+        <p>You shouldn't see "You are vulnerable", if you're patched you will see "bash: shellshocker: command not found"</p>
         <hr />
         <p>If you've tested your system, please leave a comment below. Don't forget to include your bash version and what OS you're running. Type
             <code>bash --version</code> for bash, and
