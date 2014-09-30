@@ -11,7 +11,7 @@ fi
 
 
 # CVE-2014-7169
-CVE20147169=$((env X='() { (a)=>\' bash -c "echo echo nonvuln" 2>/dev/null; [[ "$(cat echo 2> /dev/null)" == "nonvuln" ]] && echo "vulnerable" 2> /dev/null) | grep 'vulnerable' | wc -l)
+CVE20147169=$((cd /tmp; rm -f /tmp/echo; env X='() { (a)=>\' bash -c "echo echo nonvuln" 2>/dev/null; [[ "$(cat echo 2> /dev/null)" == "nonvuln" ]] && echo "vulnerable" 2> /dev/null) | grep 'vulnerable' | wc -l)
 
 if [ $CVE20147169 -gt 0 ]; then
 	echo "CVE-2014-7169: VULNERABLE"
