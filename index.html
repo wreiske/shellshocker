@@ -18,7 +18,7 @@
     <!-- Bootstrap theme -->
     <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/theme.min.css?rev=09272014-1147pm" rel="stylesheet">
+    <link href="/theme.min.css?rev=92914-300pm" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -84,7 +84,6 @@
         </script>
         </div>
         <br />
-        <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="alert alert-warning" style="text-align:center;text-shadow:none;" role="alert">
             <p>Patch 27 is now live (Sun Sep 28 2014: 1:11AM EST). Please re-patch your systems!</p>
             <p><pre>curl https://shellshocker.net/fixbash | sh</pre></p>
@@ -168,20 +167,22 @@ echo "https://shellshocker.net/"
         </p>
         <h4>Exploit 2 (<a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169">CVE-2014-7169</a>)</h4>
         <p>Even after upgrading bash you may still be vulnerable to this exploit. Try running the following code.</p>
-        <pre>env X='() { (shellshocker.net)=>\' bash -c "echo date"; cat echo ; rm -f echo</pre>
+        <pre>env X='() { (shellshocker.net)=>\' bash -c "echo date"; cat echo; rm ./echo</pre>
         <p>If the above command outputs the current date (it may also show errors), you are still vulnerable.</p>
         <h4>Exploit 3 (???)</h4>
         <p>
             Here is another variation of the exploit. <i>Please leave a comment below if you know the CVE of this exploit.</i>
         </p>
-        <pre>env -i X=' () { }; echo hello' bash -c 'date'</pre>
+        <pre>env X=' () { }; echo hello' bash -c 'date'</pre>
         <p>If the above command outputs "hello", you are vulnerable.</p>
         <h4>Exploit 4 (<a target="_blank" href="https://access.redhat.com/security/cve/CVE-2014-7186">CVE-2014-7186</a>)</h4>
         <pre>bash -c 'true &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF' ||
 echo "CVE-2014-7186 vulnerable, redir_stack"</pre>
+    <p>A vulnerable system will echo the text "CVE-2014-7186 vulnerable, redir_stack".</p>
 	<h4>Exploit 5 (<a target="_blank" href="https://access.redhat.com/security/cve/CVE-2014-7187">CVE-2014-7187</a>)</h4>
         <pre>(for x in {1..200} ; do echo "for x$x in ; do :"; done; for x in {1..200} ; do echo done ; done) | bash ||
 echo "CVE-2014-7187 vulnerable, word_lineno"</pre>
+        <p>A vulnerable system will echo the text "CVE-2014-7187 vulnerable, word_lineno".</p>
         <hr />
         <p>If you've tested your system, please leave a comment below. Don't forget to include your bash version and what OS you're running. Type
             <code>bash --version</code> for bash, and
@@ -206,9 +207,9 @@ echo "CVE-2014-7187 vulnerable, word_lineno"</pre>
         </p>
         <pre>yum update bash -y</pre>
         <p>For Ubuntu Systems:</p>
-        <pre>apt-get update; apt-get upgrade;</pre> 
+        <pre>apt-get update; apt-get install --only-upgrade bash</pre> 
         <p>For Arch Linux:</p>
-        <pre>pacman -Syu</pre>
+        <pre>pacman -Sy bash</pre>
         <p>
             If your package manager doesn't find an update, you will need to build bash from src.
         </p>
@@ -231,7 +232,8 @@ for i in $(seq -f "%03g" 1 27);do patch -p0 &lt; ../bash43-$i; done
 </pre>
 
         <h4>OS X</h4>
-        <p>If you're running OS X, you will need to download and compile bash yourself using <a target="_blank" href="http://brew.sh/#install">brew</a> or <a target="_blank" href="https://www.macports.org/install.php">MacPorts</a>.</p>
+        <p>If you're running OS X, Apple has released official patches for <a target="_blank" href="http://support.apple.com/kb/DL1769?viewlocale=en_US&locale=en_US">Mavericks</a>, <a target="_blank" href="http://support.apple.com/kb/DL1768">Mountain Lion</a> and <a target="_blank" href="http://support.apple.com/kb/DL1767">Lion</a>.</p>
+        <p>You can also download and compile bash yourself using <a target="_blank" href="http://brew.sh/#install">brew</a> or <a target="_blank" href="https://www.macports.org/install.php">MacPorts</a>.</p>
         <p>We recommend using brew - Go to <a target="_blank" href="http://brew.sh/#install">http://brew.sh/</a> and install brew on your system.</p>
         <p>Once you have brew installed, run the following commands to update your system</p>
         <pre>brew update
@@ -323,7 +325,7 @@ sudo port upgrade bash
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="/shellshock.min.js?rev=09272014-1148pm"></script>
+    <script src="/shellshock.min.js?rev=09292014-336pm"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5423ce5b6319e090" async></script>
     <!-- Piwik -->

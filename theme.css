@@ -52,6 +52,16 @@ pre {
 	color: white;
 }
 
+.alert-warning {
+	background-image: -webkit-linear-gradient(top,#FEE5AE 0,#FEE5AE 100%);
+	background-image: -o-linear-gradient(top,#FEE5AE 0,#FEE5AE 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#FEE5AE),to(#FEE5AE));
+	background-image: linear-gradient(to bottom, #FEE5AE 0, #FEE5AE 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffFEE5AE', endColorstr='#ffFEE5AE', GradientType=0);
+	border-color: #fdbb30;
+	color: #594726;
+}
+
 .theme-dropdown .dropdown-menu {
   position: static;
   display: block;

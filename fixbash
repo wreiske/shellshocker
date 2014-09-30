@@ -6,12 +6,13 @@
 # Are you looking at this in your web browser, and would like to apply the bash patches?
 # Just open up your terminal and type:
 #
-#    curl https://shellshock.net/fixbash | sh
+#    curl https://shellshocker.net/fixbash | sh
 ########
 # REV 4: Added prefix to configure for fedora systems.
 # REV 5: Bumped patch to 26 from 25.
 # REV 6: Bumped patch to 27 from 26.
-# REV 7: Updated loops to download and apply up to latest patch.
+# REV 7: Not using sudo when logged in as root: https://github.com/wreiske/shellshocker/pull/15
+# REV 8: Updated loops to download and apply up to latest patch: https://github.com/wreiske/shellshocker/pull/17
 ########
 # This script will download bash 4.3 to your home directory, extract, download patches, patch,
 # install patches, and install the fixed bash.
@@ -21,7 +22,7 @@
 echo "----------------------------------------------"
 echo "-- WELCOME TO THE SHELLSHOCKER BASH PATCHER --"
 echo "----------------------------------------------"
-echo "---     Revision 7, 092714-5:55PM UTC      ---"
+echo "---     Revision 8, 092914-4:56PM ETC      ---"
 echo "--- Provided by https://shellshocker.net/  ---"
 echo "----------------------------------------------"
 echo "Creating folders..."
@@ -43,19 +44,32 @@ echo "Extracting bash from tar.gz..."
 tar zxvf bash-4.3.tar.gz 
 cd bash-4.3
 echo "Applying Patches..."
-for j in $(seq -f "%03g" 1 $i);do patch -p0 < ../bash43-$j; done
+for i in $(seq -f "%03g" 1 27);do patch -p0 < ../bash43-$i; done
 
-echo "Ready to install. Configuring... You may need to type your sudo password here."
-sudo ./configure --prefix=/
-echo "Running make"
-sudo make
-echo "Running make install"
-sudo make install
-sudo cp /bin/bash /usr/local/bin/bash
+if [[ "$USER" == "root" ]]
+then
+  echo "Ready to install. Configuring..."
+  ./configure --prefix=/
+  echo "Running make"
+  make
+  echo "Running make install"
+  make install
+  cp /bin/bash /usr/local/bin/bash
+else
+  echo "Ready to install. Configuring... You may need to type your sudo password here."
+  sudo ./configure --prefix=/
+  echo "Running make"
+  sudo make
+  echo "Running make install"
+  sudo make install
+  sudo cp /bin/bash /usr/local/bin/bash
+fi
 
 echo "----------------------------------------------"
 echo "Done! Try opening a new bash shell and checking if your system is still vulnerable."
 echo "Script provided by https://shellshocker.net/"
-echo "Please go leave a comment and let me know if this script worked for you!"
+echo "Please go leave a comment and let us know if this script worked for you!"
 echo "Follow us on twitter too, https://twitter.com/shellshockernet"
+echo "Send issue requests to https://github.com/wreiske/shellshocker/issues"
+echo "Want to help make shellshocker better? Contribute @ https://github.com/wreiske/shellshocker/"
 echo "-Thanks"

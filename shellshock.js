@@ -8,10 +8,6 @@ $(function() {
 
     get_stats();
 
-    setInterval(function() {
-        get_stats()
-    }, 60000);
-
     function get_stats() {
         var jqxhr = $.getJSON("/stats", function(data) {
                 $("#test_stats").html("<strong>" + data.total + "</strong> Total tests to date. <strong>" + data.total_vulnerable + "</strong> Total vulnerable hosts found.");
