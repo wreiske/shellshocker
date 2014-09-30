@@ -167,7 +167,7 @@ echo "https://shellshocker.net/"
         </p>
         <h4>Exploit 2 (<a target="_blank" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169">CVE-2014-7169</a>)</h4>
         <p>Even after upgrading bash you may still be vulnerable to this exploit. Try running the following code.</p>
-        <pre>env X='() { (shellshocker.net)=>\' bash -c "echo date"; cat echo ; rm -f echo</pre>
+        <pre>env X='() { (shellshocker.net)=>\' bash -c "echo date"; cat echo; rm ./echo</pre>
         <p>If the above command outputs the current date (it may also show errors), you are still vulnerable.</p>
         <h4>Exploit 3 (???)</h4>
         <p>
