@@ -11,18 +11,17 @@ fi
 
 
 # CVE-2014-7169
-CVE20147169=$(cd /tmp 2>&1; rm -f /tmp/echo 2>&1; env 'x=() { (a)=>\' bash -c "echo uname" 2>&1; cat /tmp/echo 2>&1)
+CVE20147169=$(env X=''() { (a)=>\'' bash -c "echo echo nonvuln" 2>/dev/null; [[ "$(cat echo 2> /dev/null)" == "nonvuln" ]] && echo "vulnerable" 2> /dev/null)
 
-if [ -s /tmp/echo ]; then
+if [[ "$CVE20147169" =~ "vulnerable" ]]; then
 	echo "CVE-2014-7169: VULNERABLE"
-	rm -f /tmp/echo
 else
 	echo "CVE-2014-7169: not vulnerable"
 fi
 
 
 # CVE-2014-7186
-CVE20147186=$(bash -c 'true <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF' 2>/dev/null || echo "CVE-2014-7186 vulnerable, redir_stack")
+CVE20147186=$(bash -c 'true <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF <<EOF' 2>/dev/null || echo "vulnerable")
 
 if [[ "$CVE20147186" =~ "vulnerable" ]]; then
 	echo "CVE-2014-7186: VULNERABLE"
@@ -32,7 +31,7 @@ fi
 
 
 # CVE-2014-7187
-CVE20147187=$((for x in {1..200}; do echo "for x$x in ; do :"; done; for x in {1..200}; do echo done; done) | bash || echo "CVE-2014-7187 vulnerable, word_lineno")
+CVE20147187=$((for x in {1..200}; do echo "for x$x in ; do :"; done; for x in {1..200}; do echo done; done) | bash || echo "vulnerable")
 
 if [[ "$CVE20147187" =~ "vulnerable" ]]; then
 	echo "CVE-2014-7186: VULNERABLE"
