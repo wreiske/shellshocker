@@ -5,9 +5,9 @@ CVE20146271=$(env 'x=() { :;}; echo vulnerable' 'BASH_FUNC_x()=() { :;}; echo vu
 
 echo -n "CVE-2014-6271 (original shellshock): "
 if [ $CVE20146271 -gt 0 ]; then
-	echo "CVE-2014-6271: VULNERABLE"
+	echo -e "\033[91mVULNERABLE\033[39m"
 else
-	echo "CVE-2014-6271: not vulnerable"
+	echo -e "\033[92mnot vulnerable\033[39m"
 fi
 
 
