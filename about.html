@@ -18,7 +18,7 @@
     <!-- Bootstrap theme -->
     <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/theme.min.css?rev=92714-1034am" rel="stylesheet">
+    <link href="/theme.min.css?rev=92914-300pm" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -115,7 +115,7 @@
          </div>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title"><i class="fa fa-code-fork"></i> Contributers</h3>
+            <h3 class="panel-title"><i class="fa fa-code-fork"></i> <span id="contributers_count">Contributers</span></h3>
         </div>
         <div class="panel-body">
             <div class="container-fluid">
@@ -196,6 +196,7 @@
 //https://api.github.com/repos/wreiske/shellshocker/contributors
 $(function(){
     var jqxhr = $.getJSON("https://api.github.com/repos/wreiske/shellshocker/contributors", function(data) {
+        $("#contributers_count").html(data.length + ' Contributers to ShellShocker.net');
         $("#contributers").html('<div class="row">');
         $.each(data, function( index, value ) {
             $("#contributers").append('<div class="col-xs-6 col-md-3"> <div class="thumbnail"><a href="'+value.html_url+'"><img src="'+value.avatar_url+'" alt="'+value.login+'"></a><div class="caption"><h3>'+value.login+'</h3><p><a target="_blank" href="'+value.html_url+'" class="btn btn-primary" role="button">GitHub</a> <a target="_blank" href="https://github.com/wreiske/shellshocker/commits?author='+value.login+'" class="btn btn-default" role="button">'+value.contributions+' contributions</a></p></div></div></div>');
