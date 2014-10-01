@@ -46,21 +46,17 @@ cd bash-4.3
 echo "Applying Patches..."
 for j in $(seq -f "%03g" 1 $i);do patch -p0 < ../bash43-$j; done
 
+echo "Ready to install. Configuring..."
+./configure --prefix=/
+echo "Running make"
+make
 if [[ "$USER" == "root" ]]
 then
-  echo "Ready to install. Configuring..."
-  ./configure --prefix=/
-  echo "Running make"
-  make
   echo "Running make install"
   make install
   cp /bin/bash /usr/local/bin/bash
 else
-  echo "Ready to install. Configuring... You may need to type your sudo password here."
-  sudo ./configure --prefix=/
-  echo "Running make"
-  sudo make
-  echo "Running make install"
+  echo "Running make install  (You may need to type your sudo password here)"
   sudo make install
   sudo cp /bin/bash /usr/local/bin/bash
 fi
