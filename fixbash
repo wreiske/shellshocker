@@ -38,7 +38,7 @@ tar zxvf bash-4.3.tar.gz
 cd bash-4.3
 echo "Applying Patches..."
 for p in `ls ../bash43-[0-9][0-9][0-9]`; do patch -p0 < $p; done
-exit
+
 echo "Ready to install. Configuring..."
 ./configure --prefix=/
 echo "Running make"
