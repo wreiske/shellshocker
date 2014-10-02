@@ -228,10 +228,10 @@ mkdir bash
 cd bash
 wget https://ftp.gnu.org/gnu/bash/bash-4.3.tar.gz
 #download all patches
-for i in $(seq -f "%03g" 1 28); do wget     https://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-$i; done
+while [ true ]; do i=`expr $i + 1`; wget -N https://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-$(printf '%03g' $i); if [ $? -ne 0 ]; then break; fi; done
 tar zxvf bash-4.3.tar.gz 
 cd bash-4.3
-for i in $(seq -f "%03g" 1 28);do patch -p0 &lt; ../bash43-$i; done
+for p in `ls ../bash43-[0-9][0-9][0-9]`; do patch -p0 &lt; $p; done
 ./configure &amp;&amp; make &amp;&amp; make install
 </pre>
 

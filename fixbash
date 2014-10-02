@@ -39,21 +39,14 @@ cd ~/
 mkdir bash-shellshocker
 cd bash-shellshocker
 echo "Downloading Bash..."
-wget https://ftp.gnu.org/gnu/bash/bash-4.3.tar.gz
+wget -N https://ftp.gnu.org/gnu/bash/bash-4.3.tar.gz
 echo "Downloading Bash patches..."
-i=0
-rtn=0
-while [ $rtn -eq 0 ]; do
-    i=`expr $i + 1`
-    wget https://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-$(printf '%03g' $i)
-    rtn=$?
-done
-i=`expr $i - 1`
+while [ true ]; do i=`expr $i + 1`; wget -N https://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-$(printf '%03g' $i); if [ $? -ne 0 ]; then break; fi; done
 echo "Extracting bash from tar.gz..."
 tar zxvf bash-4.3.tar.gz 
 cd bash-4.3
 echo "Applying Patches..."
-for j in $(seq -f "%03g" 1 $i);do patch -p0 < ../bash43-$j; done
+for p in `ls ../bash43-[0-9][0-9][0-9]`; do patch -p0 < $p; done
 
 echo "Ready to install. Configuring..."
 ./configure --prefix=/
