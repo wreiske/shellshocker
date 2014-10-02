@@ -13,6 +13,7 @@
 # REV 6: Bumped patch to 27 from 26.
 # REV 7: Not using sudo when logged in as root: https://github.com/wreiske/shellshocker/pull/15
 # REV 8: Updated loops to download and apply up to latest patch: https://github.com/wreiske/shellshocker/pull/17
+# REV 9: Added check for gcc to be installed.
 ########
 # This script will download bash 4.3 to your home directory, extract, download patches, patch,
 # install patches, and install the fixed bash.
@@ -25,6 +26,14 @@ echo "----------------------------------------------"
 echo "---     Revision 8, 092914-4:56PM ETC      ---"
 echo "--- Provided by https://shellshocker.net/  ---"
 echo "----------------------------------------------"
+
+GCC=`which gcc`
+if [ -z "$GCC" ]; then
+    echo "Your system does not have the GNU gcc complier installed."
+    echo "Please install the gcc complier and then run this script again."
+    exit 1
+fi
+
 echo "Creating folders..."
 cd ~/
 mkdir bash-shellshocker
