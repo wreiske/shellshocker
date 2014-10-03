@@ -53,7 +53,7 @@ echo "Ready to install. Configuring..."
 ./configure --prefix=/
 echo "Running make"
 make
-if [[ "$USER" == "root" ]]
+if [ `id -u` -eq 0 ]
 then
   echo "Running make install"
   make install
