@@ -184,9 +184,12 @@ echo "CVE-2014-7186 vulnerable, redir_stack"</pre>
         <pre>(for x in {1..200} ; do echo "for x$x in ; do :"; done; for x in {1..200} ; do echo done ; done) | bash ||
 echo "CVE-2014-7187 vulnerable, word_lineno"</pre>
         <p>A vulnerable system will echo the text "CVE-2014-7187 vulnerable, word_lineno".</p>
-         <h4>Exploit 6 (<a target="_blank" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6278">CVE-2014-6278</a>)</h4>
+        <h4>Exploit 6 (<a target="_blank" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6278">CVE-2014-6278</a>)</h4>
         <pre>shellshocker='() { echo You are vulnerable; }' bash -c shellshocker</pre>
         <p>You shouldn't see "You are vulnerable", if you're patched you will see "bash: shellshocker: command not found"</p>
+        <h4>Exploit 7 (<a target="_blank" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6277">CVE-2014-6277</a>)</h4>
+        <pre>bash -c "f() { x() { _;}; x() { _;} <<a; }" 2>/dev/null || echo vulnerable</pre>
+        <p>If the command outputs "vulnerable", you are vulnerable.</p>
         <hr />
         <p>If you've tested your system, please leave a comment below. Don't forget to include your bash version and what OS you're running. Type
             <code>bash --version</code> for bash, and
