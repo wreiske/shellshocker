@@ -188,7 +188,7 @@ echo "CVE-2014-7187 vulnerable, word_lineno"</pre>
         <pre>shellshocker='() { echo You are vulnerable; }' bash -c shellshocker</pre>
         <p>You shouldn't see "You are vulnerable", if you're patched you will see "bash: shellshocker: command not found"</p>
         <h4>Exploit 7 (<a target="_blank" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6277">CVE-2014-6277</a>)</h4>
-        <pre>bash -c &quot;f() { x() { _;}; x() { _;} <<a; }&quot; 2>/dev/null || echo vulnerable</pre>
+        <pre>bash -c &quot;f() { x() { _;}; x() { _;} &lt;&lt;a; }&quot; 2&gt;/dev/null || echo vulnerable</pre>
         <p>If the command outputs "vulnerable", you are vulnerable.</p>
         <hr />
         <p>If you've tested your system, please leave a comment below. Don't forget to include your bash version and what OS you're running. Type
