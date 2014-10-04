@@ -67,7 +67,7 @@
                     </li>
                     <li>
                         <a href="/about">About Us</a>
-                    </li>    
+                    </li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
@@ -188,7 +188,7 @@ echo "CVE-2014-7187 vulnerable, word_lineno"</pre>
         <pre>shellshocker='() { echo You are vulnerable; }' bash -c shellshocker</pre>
         <p>You shouldn't see "You are vulnerable", if you're patched you will see "bash: shellshocker: command not found"</p>
         <h4>Exploit 7 (<a target="_blank" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6277">CVE-2014-6277</a>)</h4>
-        <pre>bash -c "f() { x() { _;}; x() { _;} <<a; }" 2>/dev/null || echo vulnerable</pre>
+        <pre>bash -c &quot;f() { x() { _;}; x() { _;} <<a; }&quot; 2>/dev/null || echo vulnerable</pre>
         <p>If the command outputs "vulnerable", you are vulnerable.</p>
         <hr />
         <p>If you've tested your system, please leave a comment below. Don't forget to include your bash version and what OS you're running. Type
@@ -214,7 +214,7 @@ echo "CVE-2014-7187 vulnerable, word_lineno"</pre>
         </p>
         <pre>yum update bash -y</pre>
         <p>For Ubuntu Systems:</p>
-        <pre>apt-get update; apt-get install --only-upgrade bash</pre> 
+        <pre>apt-get update; apt-get install --only-upgrade bash</pre>
         <p>For Arch Linux:</p>
         <pre>pacman -Syu</pre>
         <p>
@@ -232,7 +232,7 @@ cd bash
 wget https://ftp.gnu.org/gnu/bash/bash-4.3.tar.gz
 #download all patches
 while [ true ]; do i=`expr $i + 1`; wget -N https://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-$(printf '%03g' $i); if [ $? -ne 0 ]; then break; fi; done
-tar zxvf bash-4.3.tar.gz 
+tar zxvf bash-4.3.tar.gz
 cd bash-4.3
 for p in `ls ../bash43-[0-9][0-9][0-9]`; do patch -p0 &lt; $p; done
 ./configure &amp;&amp; make &amp;&amp; make install
@@ -267,7 +267,7 @@ sudo port upgrade bash
         <h4>Shock API</h4>
         <p>Send a <strong>GET</strong> or <strong>POST</strong> request to:</p>
         <pre>https://shellshocker.net/shock?url=https://example.com</pre>
-        <p>You will get a JSON object with a <strong>status</strong> and a <strong>message</strong>. 
+        <p>You will get a JSON object with a <strong>status</strong> and a <strong>message</strong>.
         <p><strong>status</strong> of 0 (Failure) with a failure <strong>message</strong>. <strong>status</strong> of 1 (Vulnerable) with a <strong>message</strong>. <strong>status</strong> of 2 (Maybe) and a <strong>message</strong>. <strong>status</strong> of 3 (404 or 403) and the response <strong>message</strong>.</p>
         <h4>Shock Stats API</h4>
          <p>Send a <strong>GET</strong> request to:</p>
