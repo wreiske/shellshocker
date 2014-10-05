@@ -35,12 +35,12 @@ if [ -z "$GCC" ]; then
     echo "Please install the gcc complier and then run this script again."
     exit 1
 fi
-if [ -z "$GCC" ]; then
+if [ -z "$PATCH" ]; then
     echo "Your system does not have the GNU patch tool installed."
     echo "Please install the patch tool and then run this script again."
     exit 1
 fi
-if [ -z "$GCC" ]; then
+if [ -z "$MAKE" ]; then
     echo "Your system does not have the GNU make tool installed."
     echo "Please install the make tool and then run this script again."
     exit 1
