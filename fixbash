@@ -28,9 +28,21 @@ echo "--- Provided by https://shellshocker.net/  ---"
 echo "----------------------------------------------"
 
 GCC=`which gcc`
+PATCH=`which patch`
+MAKE=`which make`
 if [ -z "$GCC" ]; then
     echo "Your system does not have the GNU gcc complier installed."
     echo "Please install the gcc complier and then run this script again."
+    exit 1
+fi
+if [ -z "$GCC" ]; then
+    echo "Your system does not have the GNU patch tool installed."
+    echo "Please install the patch tool and then run this script again."
+    exit 1
+fi
+if [ -z "$GCC" ]; then
+    echo "Your system does not have the GNU make tool installed."
+    echo "Please install the make tool and then run this script again."
     exit 1
 fi
 
@@ -58,10 +70,18 @@ then
   echo "Running make install"
   make install
   cp /bin/bash /usr/local/bin/bash
+  if [ $? -ne 0 ]; then
+      cp /usr/local/bin/bash /usr/local/bin/bash.back
+      cp -f cp /bin/bash /usr/local/bin/bash
+  fi
 else
   echo "Running make install  (You may need to type your sudo password here)"
   sudo make install
   sudo cp /bin/bash /usr/local/bin/bash
+  if [ $? -ne 0 ]; then
+      sudo cp /usr/local/bin/bash /usr/local/bin/bash.back
+      sudo cp -f cp /bin/bash /usr/local/bin/bash
+  fi
 fi
 
 echo "----------------------------------------------"
