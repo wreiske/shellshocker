@@ -72,7 +72,7 @@ then
   cp /bin/bash /usr/local/bin/bash
   if [ $? -ne 0 ]; then
       cp /usr/local/bin/bash /usr/local/bin/bash.back
-      cp -f cp /bin/bash /usr/local/bin/bash
+      cp -f /bin/bash /usr/local/bin/bash
   fi
 else
   echo "Running make install  (You may need to type your sudo password here)"
@@ -80,7 +80,7 @@ else
   sudo cp /bin/bash /usr/local/bin/bash
   if [ $? -ne 0 ]; then
       sudo cp /usr/local/bin/bash /usr/local/bin/bash.back
-      sudo cp -f cp /bin/bash /usr/local/bin/bash
+      sudo cp -f /bin/bash /usr/local/bin/bash
   fi
 fi
 
