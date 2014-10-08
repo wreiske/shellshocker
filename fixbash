@@ -62,26 +62,18 @@ echo "Applying Patches..."
 for p in `ls ../bash43-[0-9][0-9][0-9]`; do patch -p0 < $p; done
 
 echo "Ready to install. Configuring..."
-./configure --prefix=/
+./configure --prefix=/usr/local
 echo "Running make"
 make
 if [ `id -u` -eq 0 ]
 then
   echo "Running make install"
   make install
-  cp /bin/bash /usr/local/bin/bash
-  if [ $? -ne 0 ]; then
-      cp /usr/local/bin/bash /usr/local/bin/bash.back
-      cp -f /bin/bash /usr/local/bin/bash
-  fi
+  cp -f /usr/local/bin/bash /bin/bash
 else
   echo "Running make install  (You may need to type your sudo password here)"
   sudo make install
-  sudo cp /bin/bash /usr/local/bin/bash
-  if [ $? -ne 0 ]; then
-      sudo cp /usr/local/bin/bash /usr/local/bin/bash.back
-      sudo cp -f /bin/bash /usr/local/bin/bash
-  fi
+  sudo cp -f /usr/local/bin/bash /bin/bash
 fi
 
 echo "----------------------------------------------"
