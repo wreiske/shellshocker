@@ -13,7 +13,8 @@ else
 fi
 
 # CVE-2014-6277
-CVE20146277=$((bash -c "f() { x() { _;}; x() { _;} <<a; }" 2>/dev/null || echo vulnerable) | grep 'vulnerable' | wc -l)
+# it is fully mitigated by the environment function prefix passing avoidance
+CVE20146277=$((shellshocker="() { x() { _;}; x() { _;} <<a; }" bash -c date 2>/dev/null || echo vulnerable) | grep 'vulnerable' | wc -l)
 
 echo -n "CVE-2014-6277 (segfault): "
 if [ $CVE20146277 -gt 0 ]; then
