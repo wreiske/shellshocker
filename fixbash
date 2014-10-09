@@ -77,7 +77,7 @@ else
 fi
 
 echo "----------------------------------------------"
-echo "Done! Try opening a new bash shell and checking if your system is still vulnerable."
+curl --silent https://shellshocker.net/shellshock_test.sh | bash
 echo "Script provided by https://shellshocker.net/"
 echo "Please go leave a comment and let us know if this script worked for you!"
 echo "Follow us on twitter too, https://twitter.com/shellshockernet"
