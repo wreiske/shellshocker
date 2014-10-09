@@ -59,7 +59,7 @@ echo "Extracting bash from tar.gz..."
 tar zxvf bash-4.3.tar.gz 
 cd bash-4.3
 echo "Applying Patches..."
-for p in `ls ../bash43-[0-9][0-9][0-9]`; do patch -p0 < $p; done
+for p in ../bash43-[0-9][0-9][0-9]; do patch -p0 < $p; done
 
 echo "Ready to install. Configuring..."
 ./configure --prefix=/
