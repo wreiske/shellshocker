@@ -69,7 +69,7 @@ else
 fi
 
 # CVE-2014-////
-CVE2014=$(env X=' () { }; echo vulnerable' bash -c 'date' | grep 'hello' | wc -l)
+CVE2014=$(env X=' () { }; echo vulnerable' bash -c 'date' | grep 'vulnerable' | wc -l)
 
 echo -n "CVE-2014-//// (exploit 3 on http://shellshocker.net/): "
 if [ $CVE2014 -gt 0 ]; then
