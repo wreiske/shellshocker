@@ -55,7 +55,7 @@ if [ -f "/var/cpanel/cpanel.config" ]; then
     echo "Removing WGET from yum.conf ignore list, removing it and reinstalling using YUM"
     sed -i "s@wget\*@@g" /etc/yum.conf
     rpm -e --nodeps wget
-    yum install wget
+    yum install wget -y
   fi
 fi
 
