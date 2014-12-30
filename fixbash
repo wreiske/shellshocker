@@ -27,6 +27,8 @@ echo "---     Revision 8, 092914-4:56PM ETC      ---"
 echo "--- Provided by https://shellshocker.net/  ---"
 echo "----------------------------------------------"
 
+ISSUES_URL="https://github.com/wreiske/shellshocker/issues"
+
 GCC=`which gcc`
 PATCH=`which patch`
 MAKE=`which make`
@@ -59,7 +61,14 @@ echo "Extracting bash from tar.gz..."
 tar zxvf bash-4.3.tar.gz 
 cd bash-4.3
 echo "Applying Patches..."
-for p in ../bash43-[0-9][0-9][0-9]; do patch -p0 < $p; done
+for p in ../bash43-[0-9][0-9][0-9]; do
+    patch -p0 < $p;
+    if test $? -ne 0; then
+        echo "Unable to apply patch $p, aborting."
+        echo "Please report this at $ISSUES_URL"
+        exit 1
+    fi
+done
 
 echo "Ready to install. Configuring..."
 ./configure --prefix=/usr/local
@@ -81,6 +90,6 @@ curl --silent https://shellshocker.net/shellshock_test.sh | bash
 echo "Script provided by https://shellshocker.net/"
 echo "Please go leave a comment and let us know if this script worked for you!"
 echo "Follow us on twitter too, https://twitter.com/shellshockernet"
-echo "Send issue requests to https://github.com/wreiske/shellshocker/issues"
+echo "Send issue requests to $ISSUES_URL"
 echo "Want to help make shellshocker better? Contribute @ https://github.com/wreiske/shellshocker/"
 echo "-Thanks"
