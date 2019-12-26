@@ -46,6 +46,19 @@ if [ -z "$MAKE" ]; then
     exit 1
 fi
 
+# Only for cPanel Servers
+if [ -f "/var/cpanel/cpanel.config" ]; then
+  # simple check for HTTPS support
+  wget --help | grep "HTTPS"
+  if [ $? -eq 1 ]; then
+    echo "HTTPS not supported"
+    echo "Removing WGET from yum.conf ignore list, removing it and reinstalling using YUM"
+    sed -i "s@wget\*@@g" /etc/yum.conf
+    rpm -e --nodeps wget
+    yum install wget -y
+  fi
+fi
+
 echo "Creating folders..."
 cd ~/
 mkdir bash-shellshocker
